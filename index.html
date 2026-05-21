@@ -31,15 +31,134 @@
     rel="stylesheet">
   <script type="module" crossorigin src="/assets/index-B10L6LCZ.js"></script>
   <link rel="stylesheet" crossorigin href="/assets/index-f4iXxLYQ.css">
+  <style>
+    /* Premium Announcement Modal Styles */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(10, 6, 30, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 99999;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .modal-overlay.active {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .modal-content {
+      background: rgba(20, 15, 50, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 24px;
+      padding: 3rem 2.5rem;
+      max-width: 480px;
+      width: 90%;
+      text-align: center;
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+      position: relative;
+      overflow: hidden;
+      transform: scale(0.9) translateY(20px);
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .modal-overlay.active .modal-content {
+      transform: scale(1) translateY(0);
+    }
+
+    .modal-glow {
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle at center, rgba(165, 138, 255, 0.1) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .modal-icon {
+      font-size: 3rem;
+      margin-bottom: 1.5rem;
+      display: inline-block;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    .modal-header h2 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2.25rem;
+      font-weight: 800;
+      margin-bottom: 1.25rem;
+      background: linear-gradient(135deg, #ffffff 40%, #a58aff 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .modal-body {
+      margin-bottom: 2.5rem;
+    }
+
+    .modal-body p {
+      color: #b0a9d8;
+      font-size: 1.05rem;
+      line-height: 1.6;
+      margin-bottom: 0.75rem;
+    }
+
+    .modal-body .highlight-text {
+      color: var(--color-aws-orange);
+      font-weight: 600;
+      font-size: 1.15rem;
+    }
+
+    .modal-footer {
+      display: flex;
+      justify-content: center;
+    }
+
+    .modal-footer .btn {
+      padding: 0.8rem 2.5rem;
+      font-size: 1rem;
+      border-radius: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(255, 153, 0, 0.2);
+      transition: all 0.3s ease;
+      background: var(--color-aws-orange);
+      border: 1px solid var(--color-aws-orange);
+      color: white;
+      text-decoration: none;
+    }
+
+    .modal-footer .btn:hover {
+      box-shadow: 0 6px 20px rgba(255, 153, 0, 0.4);
+      transform: translateY(-2px);
+      background: #e68a00;
+    }
+  </style>
 </head>
 
 <body class="dark-theme">
   <nav id="navbar" class="navbar">
     <div class="nav-container">
-      <div class="logo" style="gap: 0.5rem;">
+      <a href="/" class="logo" style="gap: 0.5rem; text-decoration: none;">
         <img src="/logo.png" alt="AWS User Group Kolkata" class="h-8" />
         <span style="color: white; font-weight: 700; font-size: 1.25rem;">AWS User Group Kolkata</span>
-      </div>
+      </a>
       <div class="nav-links">
         <a href="#about">About</a>
         <a href="#organizers">Organizers</a>
@@ -215,6 +334,43 @@
   <div class="dev-sticky-footer">
     🚧 The site is under development
   </div>
+
+  <!-- Announcement Modal -->
+  <div id="dev-modal" class="modal-overlay">
+    <div class="modal-content">
+      <div class="modal-glow"></div>
+      <div class="modal-header">
+        <div class="modal-icon">⚠️</div>
+        <h2>Notice</h2>
+      </div>
+      <div class="modal-body">
+        <p>This website is currently under development.</p>
+        <p class="highlight-text">Please note that active development is currently on hold.</p>
+      </div>
+      <div class="modal-footer">
+        <button id="close-modal-btn" class="btn">Acknowledge</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const modal = document.getElementById("dev-modal");
+      const closeBtn = document.getElementById("close-modal-btn");
+
+      if (modal) {
+        setTimeout(() => {
+          modal.classList.add("active");
+        }, 400);
+      }
+
+      if (closeBtn && modal) {
+        closeBtn.addEventListener("click", () => {
+          modal.classList.remove("active");
+        });
+      }
+    });
+  </script>
 
 </body>
 
