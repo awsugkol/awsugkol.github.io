@@ -74,6 +74,19 @@
   line-height: 1.6;
 }
 
+.points-table td a {
+  color: #a58aff;
+  text-decoration: none;
+  font-weight: 600;
+  border-bottom: 1px dashed rgba(165, 138, 255, 0.4);
+  transition: all var(--transition-normal);
+}
+
+.points-table td a:hover {
+  color: #fff;
+  border-bottom-color: #fff;
+}
+
 .points-table tr:last-child td {
   border-bottom: none;
 }
@@ -150,6 +163,12 @@
   color: #f87171;
 }
 
+.points-badge.badge-neutral {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: var(--color-text-secondary);
+}
+
 .points-table tr:hover .points-badge {
   background: linear-gradient(135deg, rgba(71, 33, 209, 0.6) 0%, rgba(32, 19, 113, 0.6) 100%);
   border-color: rgba(165, 138, 255, 0.6);
@@ -172,6 +191,14 @@
   color: #fff;
   transform: scale(1.05);
   box-shadow: 0 0 15px rgba(239, 68, 68, 0.4);
+}
+
+.points-table tr:hover .points-badge.badge-neutral {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.1) 100%);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #fff;
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
 }
 
 .badge-max {
@@ -955,6 +982,21 @@
   font-weight: 600;
   color: #fff;
   transition: color var(--transition-normal);
+}
+
+.volunteer-code {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #a58aff;
+  background: rgba(165, 138, 255, 0.1);
+  border: 1px solid rgba(165, 138, 255, 0.25);
+  padding: 0.15rem 0.45rem;
+  border-radius: 6px;
+  margin-left: 0.5rem;
+  vertical-align: middle;
+  letter-spacing: 0.5px;
+  font-family: monospace;
 }
 
 .accordion-header:hover .leaderboard-name,
