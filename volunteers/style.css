@@ -1215,3 +1215,100 @@
   }
 }
 
+/* Leaderboard Tiers & Show More Styles */
+.leaderboard-tabs {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 0 auto 2.5rem;
+  max-width: 600px;
+}
+
+.tab-btn {
+  padding: 0.6rem 1.25rem;
+  border-radius: 30px;
+  background: rgba(20, 15, 50, 0.45);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--color-text-secondary);
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  transition: all var(--transition-normal);
+}
+
+.tab-btn:hover {
+  border-color: rgba(165, 138, 255, 0.4);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+.tab-btn.active {
+  background: linear-gradient(135deg, rgba(165, 138, 255, 0.2) 0%, rgba(71, 33, 209, 0.2) 100%);
+  border-color: #a58aff;
+  color: #fff;
+  box-shadow: 0 0 15px rgba(165, 138, 255, 0.25), 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.load-more-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.load-more-btn {
+  padding: 0.75rem 2rem;
+  border-radius: 50px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  background: transparent;
+  border: 2px solid #a58aff;
+  color: #fff;
+  font-family: var(--font-heading);
+  box-shadow: 0 4px 15px rgba(165, 138, 255, 0.15);
+  transition: all var(--transition-normal);
+}
+
+.load-more-btn:hover {
+  background: #a58aff;
+  border-color: #a58aff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(165, 138, 255, 0.4);
+}
+
+/* Copy Code Button Styles */
+.volunteer-code-container {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  vertical-align: middle;
+}
+
+.copy-code-btn {
+  background: transparent;
+  border: none;
+  color: var(--color-text-secondary);
+  font-size: 0.8rem;
+  cursor: pointer;
+  padding: 0.2rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-normal);
+  opacity: 0.6;
+}
+
+.copy-code-btn:hover {
+  color: #a58aff;
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+
+
