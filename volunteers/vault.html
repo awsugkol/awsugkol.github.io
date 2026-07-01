@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" href="../assets/images/icon.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Volunteer Vault with AWS User Group Kolkata (AWSUGKOL) - Access restricted community resources." />
+  <title>Volunteer Vault | AWS User Group Kolkata</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" crossorigin href="../assets/css/index-f4iXxLYQ.css">
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body class="dark-theme">
+  <script>
+    (function () {
+      const theme = localStorage.getItem('theme') || 'dark';
+      if (theme === 'light') {
+        document.body.classList.remove('dark-theme');
+        document.body.classList.add('light-theme');
+      }
+    })();
+  </script>
+  <nav id="navbar" class="navbar"></nav>
+
+  <main id="volunteers-main">
+    <section class="password-section">
+      <div class="password-container">
+        <div class="password-glow"></div>
+        <div class="lock-icon">
+          <i class="fa-solid fa-lock"></i>
+        </div>
+        <div class="password-header">
+          <h1>Volunteers Vault</h1>
+          <p>This page contains sensitive activity rules and points configuration. Please enter the password to unlock.</p>
+        </div>
+        <div class="password-form">
+          <input type="password" id="page-password" placeholder="Enter password" autocomplete="current-password" autofocus />
+          <button id="unlock-btn">Unlock Vault</button>
+        </div>
+        <div id="error-message" class="error-message"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer></footer>
+
+  <!-- Scroll to Top Button -->
+  <button id="scroll-to-top" class="scroll-to-top btn" aria-label="Scroll to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+  <script src="../assets/js/layout.js"></script>
+  <script src="./registry.js"></script>
+  <script src="./vault-encrypted-data.js"></script>
+  <script src="./vault-script.js"></script>
+</body>
+
+</html>

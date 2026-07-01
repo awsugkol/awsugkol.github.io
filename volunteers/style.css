@@ -1310,5 +1310,791 @@
   transform: scale(1.1);
 }
 
+/* Leaderboard Badges Container */
+.leaderboard-badges-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.35rem;
+}
 
+/* Base Volunteer Badge Style */
+.vol-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.68rem;
+  font-weight: 700;
+  font-family: var(--font-heading);
+  padding: 0.18rem 0.5rem;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  transition: all var(--transition-normal);
+  border: 1px solid transparent;
+  line-height: 1;
+}
+
+.vol-badge:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+}
+
+/* Custom Role Badge (AWS UG Kolkata Leader, etc.) */
+.vol-badge.badge-role {
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.15) 0%, rgba(109, 40, 217, 0.15) 100%);
+  border: 1px solid rgba(167, 139, 250, 0.35);
+  color: #c4b5fd;
+}
+
+.vol-badge.badge-role:hover {
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.3) 0%, rgba(109, 40, 217, 0.3) 100%);
+  border-color: rgba(167, 139, 250, 0.6);
+  color: #fff;
+}
+
+/* Active Volunteer Badge */
+.vol-badge.badge-active-vol {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.12) 0%, rgba(5, 150, 105, 0.12) 100%);
+  border: 1px solid rgba(52, 211, 153, 0.35);
+  color: #34d399;
+}
+
+.vol-badge.badge-active-vol:hover {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.22) 0%, rgba(5, 150, 105, 0.22) 100%);
+  border-color: rgba(52, 211, 153, 0.55);
+  color: #fff;
+}
+
+/* Inactive Volunteer Badge */
+.vol-badge.badge-inactive {
+  background: linear-gradient(135deg, rgba(75, 85, 99, 0.15) 0%, rgba(55, 65, 81, 0.15) 100%);
+  border: 1px solid rgba(156, 163, 175, 0.25);
+  color: #9ca3af;
+}
+
+.vol-badge.badge-inactive:hover {
+  background: linear-gradient(135deg, rgba(75, 85, 99, 0.25) 0%, rgba(55, 65, 81, 0.25) 100%);
+  border-color: rgba(156, 163, 175, 0.45);
+  color: #fff;
+}
+
+/* 100+ Points Badge */
+.vol-badge.badge-100 {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.12) 0%, rgba(29, 78, 216, 0.12) 100%);
+  border: 1px solid rgba(96, 165, 250, 0.35);
+  color: #93c5fd;
+}
+
+.vol-badge.badge-100:hover {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.22) 0%, rgba(29, 78, 216, 0.22) 100%);
+  border-color: rgba(96, 165, 250, 0.55);
+  color: #fff;
+}
+
+/* 200+ Points Badge */
+.vol-badge.badge-200 {
+  background: linear-gradient(135deg, rgba(45, 212, 191, 0.12) 0%, rgba(13, 148, 136, 0.12) 100%);
+  border: 1px solid rgba(45, 212, 191, 0.35);
+  color: #99f6e4;
+}
+
+.vol-badge.badge-200:hover {
+  background: linear-gradient(135deg, rgba(45, 212, 191, 0.22) 0%, rgba(13, 148, 136, 0.22) 100%);
+  border-color: rgba(45, 212, 191, 0.55);
+  color: #fff;
+}
+
+/* 300+ Points Badge */
+.vol-badge.badge-300 {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.12) 0%, rgba(180, 83, 9, 0.12) 100%);
+  border: 1px solid rgba(251, 191, 36, 0.35);
+  color: #fde047;
+}
+
+.vol-badge.badge-300:hover {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.22) 0%, rgba(180, 83, 9, 0.22) 100%);
+  border-color: rgba(251, 191, 36, 0.55);
+  color: #fff;
+}
+
+/* 400+ Points Badge */
+.vol-badge.badge-400 {
+  background: linear-gradient(135deg, rgba(249, 115, 22, 0.12) 0%, rgba(194, 65, 12, 0.12) 100%);
+  border: 1px solid rgba(251, 146, 60, 0.35);
+  color: #fed7aa;
+}
+
+.vol-badge.badge-400:hover {
+  background: linear-gradient(135deg, rgba(249, 115, 22, 0.22) 0%, rgba(194, 65, 12, 0.22) 100%);
+  border-color: rgba(251, 146, 60, 0.55);
+  color: #fff;
+}
+
+/* 500+ Points Badge (Glowing Premium Capsule) */
+.vol-badge.badge-500 {
+  background: linear-gradient(135deg, rgba(236, 72, 153, 0.15) 0%, rgba(219, 39, 119, 0.15) 50%, rgba(245, 158, 11, 0.15) 100%);
+  border: 1px solid rgba(244, 63, 94, 0.45);
+  color: #fecdd3;
+  box-shadow: 0 0 10px rgba(236, 72, 153, 0.25);
+  animation: badgeGlow 4s infinite alternate;
+}
+
+.vol-badge.badge-500:hover {
+  background: linear-gradient(135deg, rgba(236, 72, 153, 0.3) 0%, rgba(219, 39, 119, 0.3) 50%, rgba(245, 158, 11, 0.3) 100%);
+  border-color: rgba(244, 63, 94, 0.7);
+  color: #fff;
+  box-shadow: 0 0 18px rgba(236, 72, 153, 0.5);
+}
+
+@keyframes badgeGlow {
+  0% {
+    box-shadow: 0 0 8px rgba(236, 72, 153, 0.2), inset 0 0 4px rgba(236, 72, 153, 0.1);
+  }
+  100% {
+    box-shadow: 0 0 16px rgba(236, 72, 153, 0.45), inset 0 0 8px rgba(236, 72, 153, 0.2);
+  }
+}
+
+
+
+
+
+/* =============================================
+   Volunteers Hero Section
+   ============================================= */
+
+.volunteers-hero {
+  position: relative;
+  padding: 8rem 2rem 4rem;
+  text-align: center;
+  overflow: hidden;
+}
+
+.volunteers-hero-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(71, 33, 209, 0.18) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 40% at 80% 50%, rgba(255, 153, 0, 0.07) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.volunteers-hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 760px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.volunteers-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 153, 0, 0.1);
+  border: 1px solid rgba(255, 153, 0, 0.3);
+  color: var(--color-aws-orange);
+  padding: 0.4rem 1rem;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  font-family: var(--font-heading);
+  letter-spacing: 0.3px;
+}
+
+.volunteers-hero-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.15;
+  margin: 0;
+}
+
+.volunteers-hero-accent {
+  background: linear-gradient(135deg, #ff9900 0%, #ff5500 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.volunteers-hero-subtitle {
+  color: var(--color-text-secondary);
+  font-size: 1.1rem;
+  line-height: 1.7;
+  max-width: 580px;
+  margin: 0;
+}
+
+.volunteers-hero-stats {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.hero-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.hero-stat-number {
+  font-family: var(--font-heading);
+  font-size: 1.9rem;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1;
+}
+
+.hero-stat-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.hero-stat-divider {
+  width: 1px;
+  height: 36px;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+@media (max-width: 768px) {
+  .volunteers-hero {
+    padding: 6.5rem 1.25rem 3rem;
+  }
+  .volunteers-hero-title {
+    font-size: clamp(1.75rem, 7vw, 2.5rem);
+  }
+  .volunteers-hero-subtitle {
+    font-size: 1rem;
+  }
+  .volunteers-hero-stats {
+    gap: 1.25rem;
+  }
+  .hero-stat-number {
+    font-size: 1.5rem;
+  }
+  .hero-stat-divider {
+    height: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .volunteers-hero-stats {
+    gap: 1.5rem;
+  }
+  .volunteers-hero-stats .hero-stat:first-child {
+    flex-basis: 100%;
+    margin-bottom: 0.5rem;
+  }
+  .volunteers-hero-stats .hero-stat-divider:first-of-type {
+    display: none;
+  }
+  .volunteers-hero-stats .hero-stat-divider:last-of-type {
+    display: block;
+    height: 28px;
+  }
+}
+
+/* Volunteers Page Light Mode Overrides */
+body.light-theme .points-header h1 {
+  background: linear-gradient(135deg, var(--color-text-primary) 30%, var(--color-aws-orange) 100%) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+body.light-theme .section-header h2 {
+  color: var(--color-text-primary) !important;
+}
+body.light-theme .section-subtitle {
+  color: var(--color-text-secondary) !important;
+}
+body.light-theme .hr-line {
+  background: rgba(0, 0, 0, 0.08) !important;
+}
+body.light-theme .leaderboard-loading {
+  color: var(--color-text-secondary) !important;
+}
+body.light-theme .leaderboard-wrapper {
+  background: #ffffff !important;
+  border-color: rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.03) !important;
+}
+body.light-theme .table-wrapper {
+  background: #ffffff !important;
+  border-color: rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.03) !important;
+}
+body.light-theme .points-table th {
+  color: var(--color-text-primary) !important;
+  border-bottom-color: rgba(0, 0, 0, 0.08) !important;
+}
+body.light-theme .points-table td {
+  color: var(--color-text-secondary) !important;
+  border-bottom-color: rgba(0, 0, 0, 0.05) !important;
+}
+body.light-theme .points-table td strong {
+  color: var(--color-text-primary) !important;
+}
+body.light-theme .points-table tr:hover {
+  background-color: rgba(0, 0, 0, 0.01) !important;
+}
+body.light-theme .accordion-item {
+  background: #ffffff !important;
+  border-color: rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.01) !important;
+}
+body.light-theme .accordion-item.active {
+  border-color: rgba(165, 138, 255, 0.4) !important;
+  box-shadow: 0 0 15px rgba(165, 138, 255, 0.06), 0 4px 15px rgba(0, 0, 0, 0.02) !important;
+}
+body.light-theme .accordion-header-left .leaderboard-name {
+  color: var(--color-text-primary) !important;
+}
+body.light-theme .accordion-panel {
+  background: rgba(0, 0, 0, 0.02) !important;
+  border-top-color: rgba(0, 0, 0, 0.05) !important;
+}
+body.light-theme .tab-btn {
+  background: rgba(0, 0, 0, 0.03) !important;
+  border-color: rgba(0, 0, 0, 0.08) !important;
+  color: var(--color-text-secondary) !important;
+}
+body.light-theme .tab-btn.active {
+  background: var(--color-aws-orange) !important;
+  border-color: var(--color-aws-orange) !important;
+  color: #ffffff !important;
+}
+body.light-theme .search-container input {
+  background: #ffffff !important;
+  border-color: rgba(0, 0, 0, 0.08) !important;
+  color: var(--color-text-primary) !important;
+}
+body.light-theme .search-container input:focus {
+  border-color: var(--color-aws-orange) !important;
+  box-shadow: 0 0 0 3px rgba(71, 33, 209, 0.15) !important;
+}
+body.light-theme .points-milestone-card {
+  background: linear-gradient(135deg, rgba(165, 138, 255, 0.06) 0%, rgba(165, 138, 255, 0.01) 100%) !important;
+  border-color: rgba(165, 138, 255, 0.2) !important;
+}
+body.light-theme .points-milestone-card .milestone-content {
+  color: var(--color-text-secondary) !important;
+}
+body.light-theme .points-milestone-card .milestone-content strong {
+  color: var(--color-text-primary) !important;
+}
+body.light-theme .points-requirement-card {
+  background: linear-gradient(135deg, rgba(255, 153, 0, 0.05) 0%, rgba(255, 153, 0, 0.01) 100%) !important;
+  border-color: rgba(255, 153, 0, 0.2) !important;
+}
+body.light-theme .points-requirement-card .requirement-content {
+  color: var(--color-text-secondary) !important;
+}
+body.light-theme .points-requirement-card .requirement-content strong {
+  color: var(--color-text-primary) !important;
+}
+body.light-theme .total-points-badge {
+  background: rgba(165, 138, 255, 0.05) !important;
+  color: #8b5cf6 !important;
+}
+body.light-theme .volunteer-code {
+  background: rgba(0, 0, 0, 0.04) !important;
+  color: var(--color-text-secondary) !important;
+}
+body.light-theme .accordion-icon {
+  color: var(--color-text-secondary) !important;
+}
+body.light-theme .leaderboard-avatar {
+  color: #ffffff !important;
+}
+body.light-theme .load-more-btn {
+  background: transparent !important;
+  border: 2px solid var(--color-aws-orange) !important;
+  color: var(--color-aws-orange) !important;
+}
+body.light-theme .load-more-btn:hover {
+  background: var(--color-aws-orange) !important;
+  color: #ffffff !important;
+}
+body.light-theme .update-notice-card {
+  background: rgba(0, 0, 0, 0.02) !important;
+  border-color: rgba(0, 0, 0, 0.06) !important;
+}
+body.light-theme .update-notice-content {
+  color: var(--color-text-secondary) !important;
+}
+body.light-theme .update-notice-content strong {
+  color: var(--color-text-primary) !important;
+}
+body.light-theme .update-notice-icon {
+  color: var(--color-aws-orange) !important;
+}
+
+body.light-theme .password-container {
+  background: #ffffff !important;
+  border-color: rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05) !important;
+}
+body.light-theme .password-glow {
+  background: radial-gradient(circle at center, rgba(165, 138, 255, 0.05) 0%, transparent 60%) !important;
+}
+body.light-theme .password-header h1 {
+  background: linear-gradient(135deg, var(--color-text-primary) 40%, var(--color-aws-orange) 100%) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+body.light-theme .password-header p {
+  color: var(--color-text-secondary) !important;
+}
+body.light-theme .password-form input[type="password"] {
+  background: #ffffff !important;
+  border-color: rgba(0, 0, 0, 0.08) !important;
+  color: var(--color-text-primary) !important;
+}
+body.light-theme .password-form input[type="password"]::placeholder {
+  color: var(--color-text-secondary) !important;
+  opacity: 0.7;
+}
+body.light-theme .password-form input[type="password"]:focus {
+  border-color: var(--color-aws-orange) !important;
+  box-shadow: 0 0 10px rgba(165, 138, 255, 0.15) !important;
+}
+body.light-theme .password-form button {
+  background: var(--color-aws-orange) !important;
+  border-color: var(--color-aws-orange) !important;
+  color: #ffffff !important;
+}
+body.light-theme .password-form button:hover {
+  background: var(--color-aws-orange-dark) !important;
+}
+body.light-theme .lock-icon {
+  color: var(--color-aws-orange) !important;
+  background: rgba(71, 33, 209, 0.05) !important;
+  border-color: rgba(71, 33, 209, 0.15) !important;
+}
+
+body.light-theme .leaderboard-table th {
+  color: var(--color-text-primary) !important;
+  border-bottom-color: rgba(0, 0, 0, 0.08) !important;
+}
+body.light-theme .leaderboard-table td {
+  color: var(--color-text-secondary) !important;
+  border-bottom-color: rgba(0, 0, 0, 0.05) !important;
+}
+body.light-theme .leaderboard-table td[data-label="Month"] {
+  color: var(--color-text-primary) !important;
+}
+body.light-theme .leaderboard-table .cell-total {
+  color: #10b981 !important;
+}
+
+body.light-theme .vol-badge.badge-role {
+  background: rgba(139, 92, 246, 0.08) !important;
+  border-color: rgba(167, 139, 250, 0.3) !important;
+  color: #6d28d9 !important;
+}
+body.light-theme .vol-badge.badge-active-vol {
+  background: rgba(16, 185, 129, 0.08) !important;
+  border-color: rgba(52, 211, 153, 0.3) !important;
+  color: #059669 !important;
+}
+body.light-theme .vol-badge.badge-inactive {
+  background: rgba(107, 114, 128, 0.08) !important;
+  border-color: rgba(156, 163, 175, 0.3) !important;
+  color: #4b5563 !important;
+}
+body.light-theme .vol-badge.badge-100 {
+  background: rgba(59, 130, 246, 0.08) !important;
+  border-color: rgba(96, 165, 250, 0.3) !important;
+  color: #1d4ed8 !important;
+}
+body.light-theme .vol-badge.badge-200 {
+  background: rgba(45, 212, 191, 0.08) !important;
+  border-color: rgba(45, 212, 191, 0.3) !important;
+  color: #0d9488 !important;
+}
+body.light-theme .vol-badge.badge-300 {
+  background: rgba(245, 158, 11, 0.08) !important;
+  border-color: rgba(251, 191, 36, 0.3) !important;
+  color: #b45309 !important;
+}
+body.light-theme .vol-badge.badge-400 {
+  background: rgba(249, 115, 22, 0.08) !important;
+  border-color: rgba(251, 146, 60, 0.3) !important;
+  color: #c2410c !important;
+}
+body.light-theme .vol-badge.badge-500 {
+  background: rgba(236, 72, 153, 0.08) !important;
+  border-color: rgba(244, 63, 94, 0.3) !important;
+  color: #db2777 !important;
+  box-shadow: none !important;
+}
+
+body.light-theme .points-table td a {
+  color: var(--color-aws-orange) !important;
+  border-bottom-color: rgba(71, 33, 209, 0.4) !important;
+}
+body.light-theme .points-table td a:hover {
+  color: var(--color-aws-orange-dark) !important;
+  border-bottom-color: var(--color-aws-orange-dark) !important;
+}
+body.light-theme .copy-code-btn:hover {
+  color: var(--color-aws-orange) !important;
+}
+body.light-theme .leaderboard-linkedin-btn {
+  background: rgba(0, 119, 181, 0.08) !important;
+  border-color: rgba(0, 119, 181, 0.25) !important;
+  color: #0077b5 !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03) !important;
+}
+body.light-theme .leaderboard-linkedin-btn:hover {
+  background: #0077b5 !important;
+  border-color: #0077b5 !important;
+  color: #fff !important;
+}
+
+body.light-theme .volunteers-hero-title {
+  color: var(--color-text-primary) !important;
+}
+body.light-theme .hero-stat-number {
+  color: var(--color-text-primary) !important;
+}
+body.light-theme .hero-stat-divider {
+  background: rgba(0, 0, 0, 0.12) !important;
+}
+
+/* Volunteer Grid and Card Styles */
+.volunteer-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.volunteer-card {
+  background: rgba(255, 255, 255, 0.01);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.volunteer-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at top right, rgba(165, 138, 255, 0.08), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.volunteer-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(165, 138, 255, 0.25);
+  box-shadow: 0 12px 30px rgba(71, 33, 209, 0.15), 0 0 2px rgba(165, 138, 255, 0.2);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.volunteer-card:hover::before {
+  opacity: 1;
+}
+
+.volunteer-card .card-header {
+  display: flex;
+  align-items: center;
+  gap: 1.15rem;
+}
+
+.volunteer-card .leaderboard-avatar {
+  width: 44px;
+  height: 44px;
+  font-size: 0.95rem;
+  flex-shrink: 0;
+}
+
+.volunteer-card .card-title-area {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.volunteer-card .leaderboard-name {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.volunteer-card .volunteer-code-container {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.volunteer-card .volunteer-code {
+  margin-left: 0 !important;
+  vertical-align: middle !important;
+  font-family: monospace;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #a58aff !important;
+  background: rgba(165, 138, 255, 0.08) !important;
+  border: 1px solid rgba(165, 138, 255, 0.2) !important;
+  padding: 0.15rem 0.45rem;
+  border-radius: 6px;
+  letter-spacing: 0.5px;
+}
+
+.volunteer-card .copy-code-btn {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  padding: 0.2rem 0.4rem;
+  font-size: 0.75rem;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.volunteer-card .copy-code-btn:hover {
+  color: var(--color-aws-orange);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.volunteer-card .leaderboard-badges-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 24px;
+}
+
+.volunteer-card .card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: auto;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding-top: 1.15rem;
+}
+
+.volunteer-card .points-display {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.volunteer-card .points-label {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.volunteer-card .total-points-badge {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-aws-orange);
+}
+
+.volunteer-card .leaderboard-linkedin-btn {
+  font-size: 0.8rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  background: rgba(0, 119, 181, 0.05);
+  border: 1px solid rgba(0, 119, 181, 0.2);
+  color: #0077b5;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all var(--transition-normal);
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.volunteer-card .leaderboard-linkedin-btn:hover {
+  background: #0077b5;
+  border-color: #0077b5;
+  color: #fff;
+}
+
+/* Light Mode Overrides for Cards */
+body.light-theme .volunteer-card {
+  background: #f8fafc !important;
+  border-color: rgba(0, 0, 0, 0.06) !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02) !important;
+}
+
+body.light-theme .volunteer-card::before {
+  background: radial-gradient(circle at top right, rgba(71, 33, 209, 0.05), transparent 70%);
+}
+
+body.light-theme .volunteer-card:hover {
+  border-color: rgba(71, 33, 209, 0.25) !important;
+  box-shadow: 0 10px 25px rgba(71, 33, 209, 0.08) !important;
+  background: #ffffff !important;
+}
+
+body.light-theme .volunteer-card .leaderboard-name {
+  color: #0f172a !important;
+}
+
+body.light-theme .volunteer-card .volunteer-code {
+  color: #4721d1 !important;
+  background: rgba(71, 33, 209, 0.05) !important;
+  border-color: rgba(71, 33, 209, 0.15) !important;
+}
+
+body.light-theme .volunteer-card .copy-code-btn {
+  background: rgba(0, 0, 0, 0.03) !important;
+  border-color: rgba(0, 0, 0, 0.05) !important;
+  color: #64748b !important;
+}
+body.light-theme .volunteer-card .copy-code-btn:hover {
+  background: rgba(71, 33, 209, 0.08) !important;
+  border-color: rgba(71, 33, 209, 0.15) !important;
+  color: #4721d1 !important;
+}
+
+body.light-theme .volunteer-card .points-label {
+  color: #64748b !important;
+}
+
+body.light-theme .volunteer-card .card-footer {
+  border-top-color: rgba(0, 0, 0, 0.06) !important;
+}
 

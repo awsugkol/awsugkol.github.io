@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/png" href="../icon.png" />
+  <link rel="icon" type="image/png" href="../assets/images/icon.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description"
     content="Volunteer with AWS User Group Kolkata (AWSUGKOL) - Join the team behind the official AWS community in Kolkata. Expand your network, learn, and grow." />
@@ -15,13 +15,13 @@
   <meta property="og:title" content="Volunteer with AWS User Group Kolkata" />
   <meta property="og:description"
     content="Join the volunteer team of AWS User Group Kolkata. Help us organize meetups, design creatives, write content, build tech tools, and network with industry experts." />
-  <meta property="og:image" content="https://awsugkol.github.io/logo.png" />
+  <meta property="og:image" content="https://awsugkol.github.io/assets/images/logo.png" />
   <meta property="twitter:card" content="summary_large_image" />
   <meta property="twitter:url" content="https://awsugkol.github.io/volunteers/" />
   <meta property="twitter:title" content="Volunteer with AWS User Group Kolkata" />
   <meta property="twitter:description"
     content="Join the volunteer team of AWS User Group Kolkata. Help us organize meetups, design creatives, write content, build tech tools, and network with industry experts." />
-  <meta property="twitter:image" content="https://awsugkol.github.io/logo.png" />
+  <meta property="twitter:image" content="https://awsugkol.github.io/assets/images/logo.png" />
   <title>Volunteer with AWSUGKOL | AWS User Group Kolkata</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -29,97 +29,107 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;800&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" crossorigin href="../assets/index-f4iXxLYQ.css">
+  <link rel="stylesheet" crossorigin href="../assets/css/index-f4iXxLYQ.css">
   <link rel="stylesheet" href="./style.css">
 </head>
 
 <body class="dark-theme">
-  <!-- Navigation -->
-  <nav id="navbar" class="navbar">
-    <div class="nav-container">
-      <a href="#" class="logo" style="gap: 0.5rem; text-decoration: none;">
-        <img src="../logo.png" alt="AWS User Group Kolkata" class="h-8" />
-        <span style="color: white; font-weight: 700; font-size: 1.25rem;">AWS User Group Kolkata</span>
-      </a>
-      <div class="nav-links">
-        <a href="https://go.omniaigs.com/r/Pe8-OW" target="_blank" class="btn btn-primary"
-          style="background: transparent; border: 2px solid var(--color-aws-orange); color: var(--color-text-primary); margin-right: 0.5rem;">AWS
-          Community Day 2025</a>
-      </div>
-      <div class="mobile-menu-btn">
-        <span></span><span></span><span></span>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Update Notice Card -->
-  <div class="update-notice-card">
-    <div class="update-notice-icon">
-      <i class="fa-solid fa-circle-info"></i>
-    </div>
-    <div class="update-notice-content">
-      <strong>Update Schedule:</strong> Volunteer activity points and the community leaderboard are updated during the first week of each month.
-    </div>
-  </div>
+  <script>
+    (function () {
+      const theme = localStorage.getItem('theme') || 'dark';
+      if (theme === 'light') {
+        document.body.classList.remove('dark-theme');
+        document.body.classList.add('light-theme');
+      }
+    })();
+  </script>
+  <nav id="navbar" class="navbar"></nav>
 
   <main id="volunteers-main">
-    <section class="password-section">
-      <div class="password-container">
-        <div class="password-glow"></div>
-        <div class="lock-icon">
-          <i class="fa-solid fa-lock"></i>
+    <div id="sheet-config"
+      data-url="https://docs.google.com/spreadsheets/d/1gLIhcPHxKFNZRebiqYQN8E0xRYiQb6EshF4xcTRWZzc/gviz/tq?tqx=out:csv"
+      style="display: none;"></div>
+
+    <!-- Hero Section -->
+    <section class="volunteers-hero">
+      <div class="volunteers-hero-bg"></div>
+      <div class="volunteers-hero-content">
+        <div class="volunteers-hero-badge">
+          <i class="fa-solid fa-users"></i>
+          AWS User Group Kolkata
         </div>
-        <div class="password-header">
-          <h1>Protected Area</h1>
-          <p>This page contains sensitive community volunteer data. Please enter the password to unlock.</p>
+        <h1 class="volunteers-hero-title">Meet Our <span class="volunteers-hero-accent">Volunteer</span> Community</h1>
+        <p class="volunteers-hero-subtitle">The dedicated people who make AWSUGKOL happen — organising events, building
+          content, growing our community across Kolkata.</p>
+        <div class="volunteers-hero-stats">
+          <div class="hero-stat">
+            <span class="hero-stat-number" id="stat-total">—</span>
+            <span class="hero-stat-label">Active Volunteers</span>
+          </div>
+          <div class="hero-stat-divider"></div>
+          <div class="hero-stat">
+            <span class="hero-stat-number">3,000+</span>
+            <span class="hero-stat-label">Members</span>
+          </div>
+          <div class="hero-stat-divider"></div>
+          <div class="hero-stat">
+            <span class="hero-stat-number">2026</span>
+            <span class="hero-stat-label">Season</span>
+          </div>
         </div>
-        <div class="password-form">
-          <input type="password" id="page-password" placeholder="Enter password" autocomplete="current-password" autofocus />
-          <button id="unlock-btn">Unlock Page</button>
-        </div>
-        <div id="error-message" class="error-message"></div>
       </div>
     </section>
+
+    <section class="leaderboard-section">
+      <div class="container">
+        <div class="section-header">
+          <div style="margin-bottom: 1.25rem;">
+            <img src="../assets/images/ug-volunteer.png" alt="Volunteer"
+              style="width: 64px; height: 64px; object-fit: contain;" />
+          </div>
+          <h2>Active Volunteers Points Leaderboard</h2>
+          <p class="section-subtitle">Real-time leaderboard and monthly points breakdown of our volunteer community.</p>
+          <div class="hr-line"></div>
+        </div>
+
+        <div class="search-container">
+          <i class="fa-solid fa-magnifying-glass search-icon"></i>
+          <input type="text" id="volunteer-search" placeholder="Search volunteers by name or role..."
+            autocomplete="off" />
+        </div>
+
+        <div class="leaderboard-tabs" id="leaderboard-tabs">
+          <button class="tab-btn active" data-tab="active">Active</button>
+          <button class="tab-btn" data-tab="500+">500+</button>
+          <button class="tab-btn" data-tab="400+">400+</button>
+          <button class="tab-btn" data-tab="300+">300+</button>
+          <button class="tab-btn" data-tab="200+">200+</button>
+          <button class="tab-btn" data-tab="100+">100+</button>
+          <button class="tab-btn" data-tab="inactive" style="display:none;">Inactive</button>
+        </div>
+
+        <div class="leaderboard-wrapper">
+          <div class="volunteer-cards-grid" id="leaderboard-cards-container">
+            <div class="leaderboard-loading" id="leaderboard-loading-placeholder">Loading volunteer profiles and points data...</div>
+          </div>
+          <div class="load-more-container" id="load-more-container">
+            <button id="load-more-btn" class="load-more-btn">Show More Volunteers</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <!-- Footer -->
-  <footer>
-    <div class="footer-content">
-      <div class="footer-logo">AWS UG Kolkata</div>
-      <p>Run by independent volunteers. Not directly affiliated with Amazon Web Services, Inc.</p>
-      <div class="social-links">
-        <a href="https://go.omniaigs.com/r/4_skda" target="_blank" aria-label="LinkedIn"><i
-            class="fa-brands fa-linkedin"></i></a>
-        <a href="https://go.omniaigs.com/r/4_Z_ma" target="_blank" aria-label="X (Twitter)"><i
-            class="fa-brands fa-x-twitter"></i></a>
-        <a href="https://go.omniaigs.com/r/Cb8qaO" target="_blank" aria-label="GitHub"><i
-            class="fa-brands fa-github"></i></a>
-        <a href="https://go.omniaigs.com/r/EpyD1_" target="_blank" aria-label="Facebook"><i
-            class="fa-brands fa-facebook"></i></a>
-        <a href="https://go.omniaigs.com/r/TD0evI" target="_blank" aria-label="Instagram"><i
-            class="fa-brands fa-instagram"></i></a>
-        <a href="https://go.omniaigs.com/r/eN2QLZ" target="_blank" aria-label="Threads"><i
-            class="fa-brands fa-threads"></i></a>
-        <a href="https://www.youtube.com/@awsugkol/" target="_blank" aria-label="YouTube"><i
-            class="fa-brands fa-youtube"></i></a>
-        <a href="https://go.omniaigs.com/r/46xdcF" target="_blank" aria-label="Meetup"><i
-            class="fa-brands fa-meetup"></i></a>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>&copy; 2026 AWS User Group Kolkata. All rights reserved.</p>
-      <p style="margin-top: 0.5rem; font-size: 0.9rem; color: var(--color-text-secondary);">Developed and Maintained by
-        <a href="https://go.omniaigs.com/r/jGyS1u" target="_blank"
-          style="color: var(--color-aws-orange); text-decoration: none; font-weight: 600;">Soumyadeep Mandal</a>
-      </p>
-    </div>
-  </footer>
+  <footer></footer>
 
   <!-- Scroll to Top Button -->
   <button id="scroll-to-top" class="scroll-to-top btn" aria-label="Scroll to top">
     <i class="fa-solid fa-arrow-up"></i>
   </button>
-  <script src="./encrypted-data.js"></script>
+  <script src="../assets/js/layout.js"></script>
+  <script src="./registry.js"></script>
   <script src="./script.js"></script>
 </body>
 
