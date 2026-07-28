@@ -178,8 +178,8 @@ document.addEventListener("DOMContentLoaded", () => {
         // Save to sessionStorage so they don't have to re-enter
         sessionStorage.setItem("volunteers-vault-token", password);
         
-        // Replace main element innerHTML with decrypted HTML
-        mainEl.innerHTML = decryptedHTML;
+        // Replace main element innerHTML with decrypted HTML (renaming "Positive Points" to "Points")
+        mainEl.innerHTML = decryptedHTML.replaceAll("Positive Points", "Points");
 
         // Initialize detailed leaderboard in vault if present
         if (document.getElementById("leaderboard-accordion-container")) {

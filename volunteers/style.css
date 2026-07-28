@@ -1,7 +1,7 @@
 /* Volunteers Page Stylesheet */
 
 .points-section {
-  padding: 3rem 1.5rem 2rem;
+  padding: 130px 1.5rem 2.5rem;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -161,7 +161,7 @@ td.cell-penalty,
 .points-badge.badge-positive {
   background: linear-gradient(135deg, rgba(16, 185, 129, 0.15) 0%, rgba(5, 150, 105, 0.15) 100%);
   border: 1px solid rgba(52, 211, 153, 0.3);
-  color: #ffffff;
+  color: #34d399;
 }
 
 .points-badge.badge-negative {
@@ -1668,6 +1668,14 @@ body.light-theme .points-table td strong {
 }
 body.light-theme .points-table tr:hover {
   background-color: rgba(0, 0, 0, 0.01) !important;
+}
+body.light-theme .points-badge.badge-positive {
+  background: rgba(16, 185, 129, 0.12) !important;
+  border-color: rgba(16, 185, 129, 0.35) !important;
+  color: #047857 !important;
+}
+body.light-theme .cell-positive {
+  color: #0f172a !important;
 }
 body.light-theme .accordion-item {
   background: #ffffff !important;
