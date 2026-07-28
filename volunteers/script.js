@@ -503,9 +503,11 @@ document.addEventListener("DOMContentLoaded", () => {
       items.forEach((item) => {
         const points = parseInt(item.getAttribute("data-points"), 10) || 0;
         const nameText = item.querySelector(".leaderboard-name").textContent.toLowerCase();
+        const codeEl = item.querySelector(".volunteer-code");
+        const codeText = codeEl ? codeEl.textContent.toLowerCase() : '';
 
         // 1. Check search filter
-        const matchesSearch = nameText.includes(searchQuery);
+        const matchesSearch = nameText.includes(searchQuery) || codeText.includes(searchQuery);
 
         // 2. Check tab filter
         let matchesTab = false;

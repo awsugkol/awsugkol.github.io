@@ -788,8 +788,10 @@ document.addEventListener("DOMContentLoaded", () => {
       items.forEach((item) => {
         const points = parseInt(item.getAttribute("data-points"), 10) || 0;
         const nameText = item.querySelector(".leaderboard-name").textContent.toLowerCase();
+        const codeEl = item.querySelector(".volunteer-code");
+        const codeText = codeEl ? codeEl.textContent.toLowerCase() : '';
 
-        const matchesSearch = nameText.includes(searchQuery);
+        const matchesSearch = nameText.includes(searchQuery) || codeText.includes(searchQuery);
 
         let matchesTab = false;
         if (!isSpreadsheetLoaded) {

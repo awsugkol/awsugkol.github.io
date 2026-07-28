@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" href="../assets/images/icon.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Events & Meetups hosted by AWS User Group Kolkata (AWSUGKOL) - Explore upcoming and past AWS meetups, workshops, and Community Days." />
+  <meta name="keywords"
+    content="AWS, Amazon Web Services, AWS User Group Kolkata, Events, Meetups, Workshops, AWSUGKOL" />
+  <meta name="author" content="AWSUGKOL" />
+  <title>Events & Meetups | AWS User Group Kolkata</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;800&display=swap"
+    rel="stylesheet">
+  <script type="module" crossorigin src="../assets/js/index-B10L6LCZ.js"></script>
+  <link rel="stylesheet" crossorigin href="../assets/css/index-f4iXxLYQ.css">
+</head>
+
+<body class="dark-theme">
+  <script>
+    (function () {
+      const theme = localStorage.getItem('theme') || 'dark';
+      if (theme === 'light') {
+        document.body.classList.remove('dark-theme');
+        document.body.classList.add('light-theme');
+      }
+    })();
+  </script>
+  <nav id="navbar" class="navbar"></nav>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero page-hero">
+      <div class="hero-grid-overlay"></div>
+      <div class="hero-content">
+        <div class="hero-badge-pill animate-fade">
+          <span class="pulse-dot"></span>
+          Meetups & Workshops • 80+ Events Hosted
+        </div>
+        <h1 class="animate-up">Events & <span class="purple-text">Meetups</span></h1>
+        <p class="animate-up delay-1">Explore our catalog of hosted meetups, technical sessions, and community gatherings.</p>
+      </div>
+    </section>
+
+    <!-- Events Section -->
+    <section id="events" class="events section" style="padding-top: 1rem;">
+      <div class="container">
+        <div class="events-search-container reveal">
+          <div class="search-wrapper">
+            <input type="text" id="events-search" placeholder="Search events by title..." autocomplete="off" />
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </div>
+        </div>
+        <div class="events-grid" id="events-grid">
+          <!-- Events will be dynamically injected here via JavaScript -->
+        </div>
+        <div id="events-pagination" class="pagination"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer></footer>
+
+  <script src="../assets/js/layout.js"></script>
+</body>
+
+</html>

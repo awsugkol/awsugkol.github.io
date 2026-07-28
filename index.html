@@ -32,129 +32,278 @@
   <script type="module" crossorigin src="/assets/js/index-B10L6LCZ.js"></script>
   <link rel="stylesheet" crossorigin href="/assets/css/index-f4iXxLYQ.css">
   <style>
-    /* Premium Announcement Modal Styles */
-    .modal-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(10, 6, 30, 0.85);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
+    /* Innovative Hero Section Styles */
+    .innovative-hero {
+      position: relative;
+      min-height: 85vh;
+      padding: 9rem 2rem 5rem;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
-      z-index: 99999;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    .modal-overlay.active {
-      opacity: 1;
-      pointer-events: all;
-    }
-
-    .modal-content {
-      background: rgba(20, 15, 50, 0.7);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 24px;
-      padding: 3rem 2.5rem;
-      max-width: 480px;
-      width: 90%;
-      text-align: center;
-      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.1);
-      position: relative;
       overflow: hidden;
-      transform: scale(0.9) translateY(20px);
-      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      background: radial-gradient(circle at 50% 20%, rgba(71, 33, 209, 0.25) 0%, rgba(10, 6, 30, 0.95) 70%);
     }
 
-    .modal-overlay.active .modal-content {
-      transform: scale(1) translateY(0);
-    }
-
-    .modal-glow {
+    .hero-grid-overlay {
       position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: radial-gradient(circle at center, rgba(165, 138, 255, 0.1) 0%, transparent 60%);
+      inset: 0;
+      background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+      background-size: 50px 50px;
       pointer-events: none;
+      mask-image: radial-gradient(ellipse at center, black 40%, transparent 80%);
+      -webkit-mask-image: radial-gradient(ellipse at center, black 40%, transparent 80%);
     }
 
-    .modal-icon {
-      font-size: 3rem;
-      margin-bottom: 1.5rem;
-      display: inline-block;
-      animation: float 3s ease-in-out infinite;
+    .hero-badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.45rem 1.2rem;
+      border-radius: 30px;
+      background: rgba(196, 181, 253, 0.12);
+      border: 1px solid rgba(196, 181, 253, 0.35);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      color: #c4b5fd;
+      font-size: 0.88rem;
+      font-weight: 600;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 20px rgba(71, 33, 209, 0.2);
     }
 
-    @keyframes float {
-
-      0%,
-      100% {
-        transform: translateY(0);
-      }
-
-      50% {
-        transform: translateY(-8px);
-      }
+    .pulse-dot {
+      width: 8px;
+      height: 8px;
+      background-color: #22c55e;
+      border-radius: 50%;
+      box-shadow: 0 0 10px #22c55e;
+      animation: pulse-glow 2s infinite ease-in-out;
     }
 
-    .modal-header h2 {
-      font-family: 'Outfit', sans-serif;
-      font-size: 2.25rem;
+    @keyframes pulse-glow {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.85); }
+    }
+
+    .innovative-hero h1 {
+      font-size: clamp(2.6rem, 5.5vw, 4.25rem);
+      font-family: var(--font-heading);
       font-weight: 800;
-      margin-bottom: 1.25rem;
-      background: linear-gradient(135deg, #ffffff 40%, #a58aff 100%);
+      line-height: 1.15;
+      max-width: 900px;
+      margin: 0 auto 1.5rem;
+      text-align: center;
+      color: #ffffff;
+      background: none;
+      -webkit-text-fill-color: initial;
+    }
+
+    .innovative-hero p {
+      font-size: clamp(1.05rem, 1.8vw, 1.25rem);
+      color: var(--color-text-secondary);
+      max-width: 680px;
+      margin: 0 auto 2.5rem;
+      text-align: center;
+      line-height: 1.6;
+    }
+
+    .hero-cta-group {
+      display: flex;
+      gap: 1.25rem;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-bottom: 4rem;
+    }
+
+    .hero-btn-primary {
+      background: linear-gradient(135deg, #4721d1 0%, #3f20c5 100%);
+      color: #ffffff !important;
+      padding: 0.9rem 2.2rem;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 1.05rem;
+      box-shadow: 0 8px 25px rgba(71, 33, 209, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      text-decoration: none;
+    }
+
+    .hero-btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 35px rgba(71, 33, 209, 0.6);
+    }
+
+    .hero-btn-secondary {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #ffffff !important;
+      padding: 0.9rem 2.2rem;
+      border-radius: 12px;
+      font-weight: 600;
+      font-size: 1.05rem;
+      backdrop-filter: blur(10px);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      text-decoration: none;
+    }
+
+    .hero-btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.12);
+      border-color: rgba(196, 181, 253, 0.5);
+      transform: translateY(-3px);
+    }
+
+    /* Floating Cloud Feature Cards Alignment Fix */
+    .hero-feature-bar {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.25rem;
+      max-width: 1080px;
+      width: 100%;
+      margin: 0 auto;
+      align-items: stretch;
+    }
+
+    @media (max-width: 1024px) {
+      .hero-feature-bar {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 580px) {
+      .hero-feature-bar {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .hero-feature-card {
+      background: rgba(20, 15, 50, 0.5);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      padding: 1.25rem;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      text-align: left;
+      gap: 0.9rem;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .hero-feature-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(196, 181, 253, 0.4);
+      box-shadow: 0 15px 35px rgba(71, 33, 209, 0.2);
+    }
+
+    .hero-feature-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: rgba(196, 181, 253, 0.15);
+      border: 1px solid rgba(196, 181, 253, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      color: #c4b5fd;
+      flex-shrink: 0;
+    }
+
+    .hero-feature-text {
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .hero-feature-text h4 {
+      font-size: 0.95rem;
+      font-family: var(--font-heading);
+      margin: 0 0 0.2rem 0;
+      color: #ffffff;
+      text-align: left;
+    }
+
+    .hero-feature-text p {
+      font-size: 0.8rem;
+      color: var(--color-text-secondary);
+      margin: 0;
+      line-height: 1.3;
+      text-align: left;
+    }
+
+    /* Light Theme Overrides for Hero */
+    body.light-theme .innovative-hero {
+      background: radial-gradient(circle at 50% 20%, rgba(71, 33, 209, 0.08) 0%, #f8fafc 70%);
+    }
+
+    body.light-theme .hero-grid-overlay {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+    }
+
+    body.light-theme .hero-badge-pill {
+      background: rgba(71, 33, 209, 0.06);
+      border-color: rgba(71, 33, 209, 0.2);
+      color: #4721d1;
+    }
+
+    body.light-theme .innovative-hero h1 {
+      background: linear-gradient(135deg, #0f172a 30%, #4721d1 70%, #d97706 100%);
       -webkit-background-clip: text;
       background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
-    .modal-body {
-      margin-bottom: 2.5rem;
+    body.light-theme .innovative-hero p {
+      color: #475569;
     }
 
-    .modal-body p {
-      color: #b0a9d8;
-      font-size: 1.05rem;
-      line-height: 1.6;
-      margin-bottom: 0.75rem;
+    body.light-theme .hero-btn-secondary {
+      background: rgba(0, 0, 0, 0.04);
+      border-color: rgba(0, 0, 0, 0.12);
+      color: #0f172a !important;
     }
 
-    .modal-body .highlight-text {
-      color: var(--color-aws-orange);
-      font-weight: 600;
-      font-size: 1.15rem;
+    body.light-theme .hero-btn-secondary:hover {
+      background: rgba(0, 0, 0, 0.08);
+      border-color: rgba(71, 33, 209, 0.3);
     }
 
-    .modal-footer {
-      display: flex;
-      justify-content: center;
+    body.light-theme .hero-feature-card {
+      background: #ffffff;
+      border-color: rgba(0, 0, 0, 0.08);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
     }
 
-    .modal-footer .btn {
-      padding: 0.8rem 2.5rem;
-      font-size: 1rem;
-      border-radius: 12px;
-      font-weight: 600;
-      cursor: pointer;
-      box-shadow: 0 4px 15px rgba(255, 153, 0, 0.2);
-      transition: all 0.3s ease;
-      background: var(--color-aws-orange);
-      border: 1px solid var(--color-aws-orange);
-      color: white;
-      text-decoration: none;
+    body.light-theme .hero-feature-card:hover {
+      border-color: rgba(71, 33, 209, 0.3);
+      box-shadow: 0 10px 25px rgba(71, 33, 209, 0.1);
     }
 
-    .modal-footer .btn:hover {
-      box-shadow: 0 6px 20px rgba(255, 153, 0, 0.4);
-      transform: translateY(-2px);
-      background: #e68a00;
+    body.light-theme .hero-feature-text h4 {
+      color: #0f172a;
+    }
+
+    body.light-theme .hero-feature-text p {
+      color: #64748b;
+    }
+
+    body.light-theme .hero-feature-icon {
+      background: rgba(71, 33, 209, 0.08);
+      border-color: rgba(71, 33, 209, 0.2);
+      color: #4721d1;
     }
   </style>
 </head>
@@ -172,108 +321,74 @@
   <nav id="navbar" class="navbar"></nav>
 
   <main>
-    <!-- Hero Section -->
-    <section id="hero" class="hero">
-      <div class="hero-background"></div>
-      <div class="hero-content">
-        <h1 class="animate-up">Empowering Cloud Enthusiasts in <span class="gradient-text">Kolkata</span></h1>
-        <p class="animate-up delay-1">Join a community of 3,000+ developers, architects, and tech enthusiasts. Learn,
-          share knowledge, and build the future with Amazon Web Services.</p>
-        <div class="hero-buttons animate-up delay-2">
-          <a href="#events" class="btn btn-primary btn-large">Discover Events</a>
-          <a href="#about" class="btn btn-secondary btn-large">Learn More</a>
+    <!-- Innovative Hero Section -->
+    <section id="hero" class="innovative-hero">
+      <div class="hero-grid-overlay"></div>
+      <div class="hero-content" style="position: relative; z-index: 2;">
+        
+        <div class="hero-badge-pill animate-up">
+          <span class="pulse-dot"></span>
+          Official AWS User Group Kolkata &bull; 3,000+ Members
         </div>
-      </div>
-      <div class="hero-visual animate-fade delay-3">
-        <div class="floating-element el-1">☁️</div>
-        <div class="floating-element el-2">🚀</div>
-        <div class="floating-element el-3">💻</div>
+
+        <h1 class="animate-up delay-1">Architecting the Future of <span class="gradient-text">Cloud & AI</span> in Kolkata</h1>
+        
+        <p class="animate-up delay-2">Connect with 3,000+ cloud developers, software architects, and tech leaders. Explore hands-on workshops, technical deep-dives, and annual AWS Community Days.</p>
+        
+        <div class="hero-cta-group animate-up delay-3">
+          <a href="https://go.omniaigs.com/r/46xdcF" target="_blank" class="hero-btn-primary">
+            <i class="fa-brands fa-meetup" style="font-size: 1.2rem;"></i> Join Us on Meetup
+          </a>
+          <a href="./events/" class="hero-btn-secondary">
+            <i class="fa-solid fa-calendar-days" style="font-size: 1.1rem; color: #c4b5fd;"></i> Explore All Events
+          </a>
+        </div>
+
+        <div class="hero-feature-bar animate-fade delay-3">
+          <div class="hero-feature-card">
+            <div class="hero-feature-icon"><i class="fa-solid fa-cloud"></i></div>
+            <div class="hero-feature-text">
+              <h4>Cloud Architecture</h4>
+              <p>Best practices & scalability</p>
+            </div>
+          </div>
+
+          <div class="hero-feature-card">
+            <div class="hero-feature-icon"><i class="fa-solid fa-robot"></i></div>
+            <div class="hero-feature-text">
+              <h4>GenAI & Bedrock</h4>
+              <p>AI agentic workflows</p>
+            </div>
+          </div>
+
+          <div class="hero-feature-card">
+            <div class="hero-feature-icon"><i class="fa-solid fa-cube"></i></div>
+            <div class="hero-feature-text">
+              <h4>Serverless & DevOps</h4>
+              <p>Lambda, ECS, CDK & IaC</p>
+            </div>
+          </div>
+
+          <div class="hero-feature-card">
+            <div class="hero-feature-icon"><i class="fa-solid fa-award"></i></div>
+            <div class="hero-feature-text">
+              <h4>Volunteer Rewards</h4>
+              <p>Leaderboard & badges</p>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
 
-    <!-- About Section -->
+    <!-- About Section (Dynamically Loaded via JS) -->
     <section id="about" class="about section">
-      <div class="container">
-        <div class="section-header reveal">
-          <h2>Who We Are</h2>
-          <div class="hr-line"></div>
-        </div>
-        <div class="about-grid">
-          <div class="about-text reveal">
-            <p>The <strong>AWS User Group Kolkata (AWSUGKOL)</strong> is an independent, community-led group based in
-              the "City of Joy", India. We are united by our passion for Amazon Web Services.</p>
-            <p>Our focus spans across <strong>Cloud Computing, Serverless Architecture, Scalability, AI/ML (Amazon
-                Bedrock), and Blockchain</strong>. Led by a passionate group of volunteers,
-              we aim to bridge the gap between learning and production-scale implementation.</p>
-          </div>
-          <div class="about-stats reveal">
-            <div class="stat-card">
-              <i class="fa-brands fa-meetup" style="font-size: 2.5rem; color: #e51937; margin-bottom: 0.5rem;"></i>
-              <h3 class="counter" data-target="3000">0</h3>
-              <p>Meetup Members</p>
-            </div>
-            <div class="stat-card">
-              <i class="fa-brands fa-linkedin" style="font-size: 2.5rem; color: #0077b5; margin-bottom: 0.5rem;"></i>
-              <h3 class="counter" data-target="2000">0</h3>
-              <p>LinkedIn Followers</p>
-            </div>
-            <div class="stat-card">
-              <i class="fa-solid fa-calendar-check"
-                style="font-size: 2.5rem; color: var(--color-aws-orange); margin-bottom: 0.5rem;"></i>
-              <h3 class="counter" data-target="80">0</h3>
-              <p>Events Hosted</p>
-            </div>
-          </div>
-        </div>
-      </div>
+      <div id="homepage-about-preview"></div>
     </section>
 
-    <!-- Organizers Section -->
+    <!-- Organizers Section (Dynamically Loaded via JS) -->
     <section id="organizers" class="organizers section">
-      <div class="container">
-        <div class="section-header reveal">
-          <h2>Community Leaders</h2>
-          <div class="hr-line"></div>
-        </div>
-        <div class="organizers-grid" style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;">
-          <div class="organizer-card reveal"
-            style="background: var(--color-bg-secondary); border: 1px solid var(--color-aws-orange); border-radius: 12px; padding: 2rem; text-align: center; max-width: 350px; box-shadow: 0 0 20px rgba(71, 33, 209, 0.1);">
-            <div class="avatar-wrapper" style="position: relative; width: 120px; height: 120px; margin: 0 auto 1.5rem;">
-              <div class="organizer-avatar"
-                style="width: 100%; height: 100%; border-radius: 50%; background: var(--color-glass); display: flex; align-items: center; justify-content: center; font-size: 3rem; border: 2px solid var(--color-aws-orange); overflow: hidden;">
-                <img src="https://avatars.githubusercontent.com/u/49950107" alt="Soumyadeep Mandal"
-                  style="width: 100%; height: 100%; object-fit: cover;" />
-              </div>
-              <div class="leader-badge" title="AWS UG Kolkata Leader"
-                style="position: absolute; bottom: 0; right: 0; width: 34px; height: 34px; background: var(--color-bg-secondary); border: 2px solid var(--color-aws-orange); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25); z-index: 2;">
-                <img src="/assets/images/ug-leader.png" alt="Leader"
-                  style="width: 20px; height: 20px; object-fit: contain;" />
-              </div>
-            </div>
-            <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Soumyadeep Mandal</h3>
-            <p style="color: var(--color-aws-orange); font-weight: 600; margin-bottom: 1rem;">AWS UG Kolkata Leader</p>
-            <p style="color: var(--color-text-secondary); font-size: 0.95rem;">Soumyadeep has been a core part of the
-              AWS User Group
-              Kolkata community since 2018. He leads operations, created the website, and dedicates immense effort to
-              host
-              successful meetups and Community Days.</p>
-            <div style="margin-top: 1.5rem; display: flex; justify-content: center; gap: 1rem;">
-              <a href="https://go.omniaigs.com/r/KF-3ZV" target="_blank"
-                style="display: flex; align-items: center; gap: 0.5rem; color: #fff; text-decoration: none; font-weight: 500; font-size: 0.95rem; padding: 0.5rem 1rem; background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 8px; transition: all 0.3s ease; box-shadow: 0 4px 6px rgba(0,0,0,0.1);"
-                onmouseover="this.style.background='rgba(255, 255, 255, 0.2)'; this.style.transform='translateY(-2px)';"
-                onmouseout="this.style.background='rgba(255, 255, 255, 0.1)'; this.style.transform='translateY(0)';"><i
-                  class="fa-brands fa-x-twitter" style="font-size: 1.1rem;"></i> X (Twitter)</a>
-              <a href="https://go.omniaigs.com/r/jGyS1u" target="_blank"
-                style="display: flex; align-items: center; gap: 0.5rem; color: #fff; text-decoration: none; font-weight: 500; font-size: 0.95rem; padding: 0.5rem 1rem; background: rgba(0, 119, 181, 0.2); border: 1px solid rgba(0, 119, 181, 0.5); border-radius: 8px; transition: all 0.3s ease; box-shadow: 0 4px 6px rgba(0,0,0,0.1);"
-                onmouseover="this.style.background='rgba(0, 119, 181, 0.4)'; this.style.transform='translateY(-2px)';"
-                onmouseout="this.style.background='rgba(0, 119, 181, 0.2)'; this.style.transform='translateY(0)';"><i
-                  class="fa-brands fa-linkedin" style="color: #0077b5; font-size: 1.1rem;"></i> LinkedIn</a>
-            </div>
-          </div>
-
-
-        </div>
-      </div>
+      <div id="homepage-organizers-preview"></div>
     </section>
 
     <!-- Events Section -->
@@ -293,6 +408,9 @@
           <!-- Events will be dynamically injected here via JavaScript -->
         </div>
         <div id="events-pagination" class="pagination"></div>
+        <div style="text-align: center; margin-top: 2.5rem;">
+          <a href="./events/" class="btn btn-secondary btn-large">Explore All 80+ Events <i class="fa-solid fa-arrow-right" style="margin-left: 0.5rem;"></i></a>
+        </div>
       </div>
     </section>
 
@@ -310,46 +428,8 @@
 
   <footer></footer>
 
-
-
-  <!-- Announcement Modal -->
-  <div id="dev-modal" class="modal-overlay">
-    <div class="modal-content">
-      <div class="modal-glow"></div>
-      <div class="modal-header">
-        <div class="modal-icon">⚠️</div>
-        <h2>Notice</h2>
-      </div>
-      <div class="modal-body">
-        <p>This website is currently under development.</p>
-        <p class="highlight-text">Please note that active development is currently on hold.</p>
-      </div>
-      <div class="modal-footer">
-        <button id="close-modal-btn" class="btn">Acknowledge</button>
-      </div>
-    </div>
-  </div>
-
   <script src="./assets/js/layout.js"></script>
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const modal = document.getElementById("dev-modal");
-      const closeBtn = document.getElementById("close-modal-btn");
-
-      if (modal) {
-        setTimeout(() => {
-          modal.classList.add("active");
-        }, 400);
-      }
-
-      if (closeBtn && modal) {
-        closeBtn.addEventListener("click", () => {
-          modal.classList.remove("active");
-        });
-      }
-    });
-  </script>
-
+  <script src="./assets/js/homepage.js"></script>
 </body>
 
 </html>
