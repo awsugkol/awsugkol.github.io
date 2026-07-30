@@ -8,13 +8,7 @@
 }
 
 .resources-hero-bg {
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle at center, rgba(71, 33, 209, 0.2), #000 65%);
-  z-index: -1;
+  display: none !important;
 }
 
 .resources-hero-content {

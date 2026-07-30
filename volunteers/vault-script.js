@@ -512,6 +512,7 @@ document.addEventListener("DOMContentLoaded", () => {
               </div>
             </div>
             <div class="accordion-header-right">
+              ${v.awsBuilder ? `<a href="${v.awsBuilder}" target="_blank" class="leaderboard-linkedin-btn" style="background: rgba(255, 153, 0, 0.18); border-color: rgba(255, 153, 0, 0.45); color: #ff9900;" title="AWS Builder Profile"><i class="fa-brands fa-aws"></i> AWS Builder</a>` : ''}
               ${v.linkedin ? `<a href="${v.linkedin}" target="_blank" class="leaderboard-linkedin-btn"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>` : ''}
               <span class="total-points-badge" title="Total Contribution Points">0 Points</span>
               <i class="fa-solid fa-chevron-down accordion-icon"></i>

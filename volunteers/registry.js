@@ -3,6 +3,7 @@ window.VOLUNTEERS_REGISTRY = [
     "name": "Soumyadeep Mandal",
     "role": "AWS UG Kolkata Leader",
     "linkedin": "https://go.omniaigs.com/r/jGyS1u",
+    "awsBuilder": "https://go.omniaigs.com/r/EN1OVr",
     "code": "SM0126"
   },
   {

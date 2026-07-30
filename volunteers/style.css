@@ -1778,10 +1778,11 @@ body.light-theme .password-glow {
   background: radial-gradient(circle at center, rgba(165, 138, 255, 0.05) 0%, transparent 60%) !important;
 }
 body.light-theme .password-header h1 {
-  background: linear-gradient(135deg, var(--color-text-primary) 40%, var(--color-aws-orange) 100%) !important;
-  -webkit-background-clip: text !important;
-  background-clip: text !important;
-  -webkit-text-fill-color: transparent !important;
+  color: #0f172a !important;
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  background-clip: unset !important;
+  -webkit-text-fill-color: #0f172a !important;
 }
 body.light-theme .password-header p {
   color: var(--color-text-secondary) !important;

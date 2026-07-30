@@ -95,7 +95,7 @@
     /* Innovative Hero Section Styles */
     .innovative-hero {
       position: relative;
-      min-height: 85vh;
+      min-height: 46vh;
       padding: 9rem 2rem 5rem;
       display: flex;
       flex-direction: column;
@@ -103,6 +103,18 @@
       align-items: center;
       overflow: hidden;
       background: radial-gradient(circle at 50% 20%, rgba(71, 33, 209, 0.25) 0%, rgba(10, 6, 30, 0.95) 70%);
+    }
+
+    @media (max-width: 768px) {
+      .innovative-hero {
+        min-height: auto !important;
+        padding: 150px 1.25rem 3rem !important;
+      }
+    }
+    @media (max-width: 480px) {
+      .innovative-hero {
+        padding: 145px 1rem 2.5rem !important;
+      }
     }
 
     .hero-grid-overlay {
@@ -320,10 +332,11 @@
     }
 
     body.light-theme .innovative-hero h1 {
-      background: linear-gradient(135deg, #0f172a 30%, #4721d1 70%, #d97706 100%);
-      -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
+      color: #0f172a;
+      background: none;
+      -webkit-background-clip: unset;
+      background-clip: unset;
+      -webkit-text-fill-color: #0f172a;
     }
 
     body.light-theme .innovative-hero p {

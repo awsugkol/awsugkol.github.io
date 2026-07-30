@@ -76,11 +76,14 @@ document.addEventListener("DOMContentLoaded", () => {
   // Scroll to top button logic
   const scrollToTopBtn = document.getElementById("scroll-to-top");
   if (scrollToTopBtn) {
+    scrollToTopBtn.removeAttribute("style");
     window.addEventListener("scroll", () => {
-      if (window.scrollY > 300) {
-        scrollToTopBtn.style.display = "flex";
+      if (window.scrollY > 150) {
+        scrollToTopBtn.classList.add("visible");
+        scrollToTopBtn.classList.add("show");
       } else {
-        scrollToTopBtn.style.display = "none";
+        scrollToTopBtn.classList.remove("visible");
+        scrollToTopBtn.classList.remove("show");
       }
     });
 
