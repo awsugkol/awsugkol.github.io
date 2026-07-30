@@ -187,7 +187,7 @@
       justify-content: center;
       align-items: center;
       flex-wrap: wrap;
-      margin-bottom: 4rem;
+      margin-bottom: 2.25rem;
     }
 
     .hero-btn-primary {
@@ -237,82 +237,107 @@
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 1.25rem;
-      max-width: 1080px;
+      max-width: 1240px;
       width: 100%;
-      margin: 0 auto;
+      margin: 2.5rem auto 0;
+      padding: 0 1.5rem;
+      box-sizing: border-box;
+      position: relative;
+      z-index: 2;
       align-items: stretch;
     }
 
-    @media (max-width: 1024px) {
+    @media (max-width: 1100px) {
       .hero-feature-bar {
         grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        max-width: 760px;
       }
     }
 
-    @media (max-width: 580px) {
+    @media (max-width: 600px) {
+      .hero-cta-group {
+        margin-bottom: 1.5rem;
+      }
       .hero-feature-bar {
         grid-template-columns: 1fr;
+        gap: 0.85rem;
+        max-width: 440px;
+        margin-top: 1.75rem;
+        padding: 0 1rem;
+      }
+      .hero-feature-card {
+        padding: 1.1rem 1.25rem;
       }
     }
 
     .hero-feature-card {
-      background: rgba(20, 15, 50, 0.5);
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(20, 15, 50, 0.55);
+      border: 1px solid rgba(255, 255, 255, 0.1);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
-      padding: 1.25rem;
-      border-radius: 14px;
+      padding: 1.5rem 1.25rem;
+      border-radius: 16px;
       display: flex;
+      flex-direction: column;
       align-items: center;
-      text-align: left;
-      gap: 0.9rem;
+      justify-content: center;
+      text-align: center !important;
+      gap: 0.85rem;
       transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
       width: 100%;
+      height: 100%;
       box-sizing: border-box;
     }
 
     .hero-feature-card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-4px);
       border-color: rgba(196, 181, 253, 0.4);
-      box-shadow: 0 15px 35px rgba(71, 33, 209, 0.2);
+      box-shadow: 0 15px 35px rgba(71, 33, 209, 0.25);
     }
 
     .hero-feature-icon {
-      width: 44px;
-      height: 44px;
-      border-radius: 10px;
-      background: rgba(196, 181, 253, 0.15);
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: rgba(196, 181, 253, 0.12);
       border: 1px solid rgba(196, 181, 253, 0.3);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.3rem;
+      font-size: 1.35rem;
       color: #c4b5fd;
       flex-shrink: 0;
+      margin: 0 auto;
     }
 
     .hero-feature-text {
-      text-align: left;
+      text-align: center !important;
       display: flex;
       flex-direction: column;
       justify-content: center;
+      align-items: center;
+      width: 100%;
     }
 
     .hero-feature-text h4 {
-      font-size: 0.95rem;
-      font-family: var(--font-heading);
-      margin: 0 0 0.2rem 0;
-      color: #ffffff;
-      text-align: left;
+      font-size: 1.02rem !important;
+      font-family: var(--font-heading) !important;
+      font-weight: 700 !important;
+      line-height: 1.25 !important;
+      margin: 0 0 0.3rem 0 !important;
+      color: #ffffff !important;
+      text-align: center !important;
     }
 
     .hero-feature-text p {
-      font-size: 0.8rem;
-      color: var(--color-text-secondary);
-      margin: 0;
-      line-height: 1.3;
-      text-align: left;
+      font-size: 0.84rem !important;
+      color: var(--color-text-secondary) !important;
+      margin: 0 !important;
+      line-height: 1.4 !important;
+      text-align: center !important;
+      font-weight: 500 !important;
     }
 
     /* Light Theme Overrides for Hero */
@@ -416,41 +441,40 @@
             <i class="fa-solid fa-calendar-days" style="font-size: 1.1rem; color: #c4b5fd;"></i> Explore All Events
           </a>
         </div>
+      </div>
 
-        <div class="hero-feature-bar animate-fade delay-3">
-          <div class="hero-feature-card">
-            <div class="hero-feature-icon"><i class="fa-solid fa-cloud"></i></div>
-            <div class="hero-feature-text">
-              <h4>Cloud Architecture</h4>
-              <p>Best practices & scalability</p>
-            </div>
-          </div>
-
-          <div class="hero-feature-card">
-            <div class="hero-feature-icon"><i class="fa-solid fa-robot"></i></div>
-            <div class="hero-feature-text">
-              <h4>GenAI & Bedrock</h4>
-              <p>AI agentic workflows</p>
-            </div>
-          </div>
-
-          <div class="hero-feature-card">
-            <div class="hero-feature-icon"><i class="fa-solid fa-cube"></i></div>
-            <div class="hero-feature-text">
-              <h4>Serverless & DevOps</h4>
-              <p>Lambda, ECS, CDK & IaC</p>
-            </div>
-          </div>
-
-          <div class="hero-feature-card">
-            <div class="hero-feature-icon"><i class="fa-solid fa-award"></i></div>
-            <div class="hero-feature-text">
-              <h4>Volunteer Rewards</h4>
-              <p>Leaderboard & badges</p>
-            </div>
+      <div class="hero-feature-bar animate-fade delay-3">
+        <div class="hero-feature-card">
+          <div class="hero-feature-icon"><i class="fa-solid fa-cloud"></i></div>
+          <div class="hero-feature-text">
+            <h4>Cloud Architecture</h4>
+            <p>Best practices & scalability</p>
           </div>
         </div>
 
+        <div class="hero-feature-card">
+          <div class="hero-feature-icon"><i class="fa-solid fa-robot"></i></div>
+          <div class="hero-feature-text">
+            <h4>GenAI & Bedrock</h4>
+            <p>AI agentic workflows</p>
+          </div>
+        </div>
+
+        <div class="hero-feature-card">
+          <div class="hero-feature-icon"><i class="fa-solid fa-cube"></i></div>
+          <div class="hero-feature-text">
+            <h4>Serverless & DevOps</h4>
+            <p>Lambda, ECS, CDK & IaC</p>
+          </div>
+        </div>
+
+        <div class="hero-feature-card">
+          <div class="hero-feature-icon"><i class="fa-solid fa-award"></i></div>
+          <div class="hero-feature-text">
+            <h4>Volunteer Rewards</h4>
+            <p>Leaderboard & badges</p>
+          </div>
+        </div>
       </div>
     </section>
 
