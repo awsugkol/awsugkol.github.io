@@ -106,39 +106,86 @@
     <!-- Leadership Showcase -->
     <section class="section" style="padding-top: 1.5rem;">
       <div class="container">
-        <div class="organizers-grid" style="display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 2.5rem;">
+        <!-- Profile Card: Two-column layout -->
+        <div style="display: grid; grid-template-columns: 280px 1fr; gap: 2.5rem; align-items: start; max-width: 960px; margin: 0 auto 3rem; background: var(--color-bg-secondary); border: 1px solid var(--color-glass-border); border-radius: 20px; padding: 2.5rem; box-shadow: 0 10px 40px rgba(71, 33, 209, 0.1);">
           
-          <div class="organizer-card"
-            style="border-radius: 16px; padding: 1.5rem 1.25rem; text-align: center; max-width: 380px; width: 100%;">
-            <div class="avatar-wrapper" style="position: relative; width: 110px; height: 110px; margin: 0 auto 1.25rem;">
-              <div class="organizer-avatar"
-                style="width: 100%; height: 100%; border-radius: 50%; background: var(--color-glass); display: flex; align-items: center; justify-content: center; font-size: 2.5rem; border: 2px solid var(--color-aws-orange); overflow: hidden;">
-                <img src="https://avatars.githubusercontent.com/u/49950107" alt="Soumyadeep Mandal"
-                  style="width: 100%; height: 100%; object-fit: cover;" />
+          <!-- Left: Avatar, Name, Links -->
+          <div style="text-align: center;">
+            <div style="position: relative; width: 130px; height: 130px; margin: 0 auto 1.5rem;">
+              <div style="width: 100%; height: 100%; border-radius: 50%; background: var(--color-glass); display: flex; align-items: center; justify-content: center; border: 3px solid var(--color-aws-orange); overflow: hidden;">
+                <img src="https://avatars.githubusercontent.com/u/49950107" alt="Soumyadeep Mandal" style="width: 100%; height: 100%; object-fit: cover;" />
               </div>
-              <div class="leader-badge" title="AWS UG Kolkata Leader"
-                style="position: absolute; bottom: 0; right: 0; width: 32px; height: 32px; background: var(--color-bg-secondary); border: 2px solid var(--color-aws-orange); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25); z-index: 2;">
-                <img src="../assets/images/ug-leader.png" alt="Leader"
-                  style="width: 18px; height: 18px; object-fit: contain;" />
+              <div title="AWS UG Kolkata Leader" style="position: absolute; bottom: 2px; right: 2px; width: 36px; height: 36px; background: var(--color-bg-secondary); border: 2px solid var(--color-aws-orange); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25); z-index: 2;">
+                <img src="../assets/images/ug-leader.png" alt="Leader" style="width: 20px; height: 20px; object-fit: contain;" />
               </div>
             </div>
-            <h3 style="font-size: 1.4rem; margin-bottom: 0.35rem; font-family: var(--font-heading);">Soumyadeep Mandal</h3>
-            <p style="color: #c4b5fd; font-weight: 700; margin-bottom: 0.75rem; font-size: 0.95rem;">AWS UG Kolkata Leader</p>
-            <p style="color: var(--color-text-secondary); font-size: 0.92rem; line-height: 1.5;">Soumyadeep has been a core part of the AWS User Group Kolkata community since 2018. He leads operations, engineered the web platforms, and dedicates immense effort to host high-impact meetups and annual Community Days.</p>
-            <div style="margin-top: 1.25rem; display: flex; justify-content: center; gap: 0.6rem; flex-wrap: wrap;">
-              <a href="https://go.omniaigs.com/r/EN1OVr" target="_blank"
-                style="display: flex; align-items: center; gap: 0.4rem; color: #fff; text-decoration: none; font-weight: 500; font-size: 0.88rem; padding: 0.4rem 0.9rem; background: rgba(255, 153, 0, 0.18); border: 1px solid rgba(255, 153, 0, 0.45); border-radius: 8px;" title="AWS Builder Profile"><i
-                  class="fa-brands fa-aws" style="color: #ff9900; font-size: 1.1rem;"></i> AWS Builder</a>
-              <a href="https://go.omniaigs.com/r/KF-3ZV" target="_blank"
-                style="display: flex; align-items: center; gap: 0.4rem; color: #fff; text-decoration: none; font-weight: 500; font-size: 0.88rem; padding: 0.4rem 0.9rem; background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 8px;"><i
-                  class="fa-brands fa-x-twitter" style="font-size: 1rem;"></i> X (Twitter)</a>
-              <a href="https://go.omniaigs.com/r/jGyS1u" target="_blank"
-                style="display: flex; align-items: center; gap: 0.4rem; color: #fff; text-decoration: none; font-weight: 500; font-size: 0.88rem; padding: 0.4rem 0.9rem; background: rgba(0, 119, 181, 0.2); border: 1px solid rgba(0, 119, 181, 0.5); border-radius: 8px;"><i
-                  class="fa-brands fa-linkedin" style="color: #0077b5; font-size: 1rem;"></i> LinkedIn</a>
+            <h3 style="font-size: 1.5rem; margin-bottom: 0.35rem; font-family: var(--font-heading);">Soumyadeep Mandal</h3>
+            <p style="color: #c4b5fd; font-weight: 700; margin-bottom: 0.25rem; font-size: 0.95rem;">Community Leader & Organizer</p>
+            <p style="color: var(--color-text-secondary); font-size: 0.82rem; margin-bottom: 1.25rem; opacity: 0.8;">Kolkata, West Bengal, India · Hybrid<br>7 yrs 10 mos with AWSUGKOL</p>
+            
+            <!-- Social Links -->
+            <div style="display: flex; flex-direction: column; gap: 0.5rem; align-items: center;">
+              <a href="https://go.omniaigs.com/r/EN1OVr" target="_blank" style="display: flex; align-items: center; gap: 0.5rem; color: var(--color-text-primary); text-decoration: none; font-weight: 500; font-size: 0.88rem; padding: 0.5rem 1rem; background: rgba(255, 153, 0, 0.18); border: 1px solid rgba(255, 153, 0, 0.45); border-radius: 8px; width: 160px; justify-content: center;" title="AWS Builder Profile"><i class="fa-brands fa-aws" style="color: #ff9900; font-size: 1.1rem;"></i> AWS Builder</a>
+              <a href="https://go.omniaigs.com/r/jGyS1u" target="_blank" style="display: flex; align-items: center; gap: 0.5rem; color: var(--color-text-primary); text-decoration: none; font-weight: 500; font-size: 0.88rem; padding: 0.5rem 1rem; background: rgba(0, 119, 181, 0.15); border: 1px solid rgba(0, 119, 181, 0.4); border-radius: 8px; width: 160px; justify-content: center;"><i class="fa-brands fa-linkedin" style="color: #0077b5; font-size: 1rem;"></i> LinkedIn</a>
+              <a href="https://go.omniaigs.com/r/KF-3ZV" target="_blank" style="display: flex; align-items: center; gap: 0.5rem; color: var(--color-text-primary); text-decoration: none; font-weight: 500; font-size: 0.88rem; padding: 0.5rem 1rem; background: rgba(128, 128, 128, 0.1); border: 1px solid rgba(128, 128, 128, 0.3); border-radius: 8px; width: 160px; justify-content: center;"><i class="fa-brands fa-x-twitter" style="font-size: 1rem;"></i> X (Twitter)</a>
             </div>
           </div>
 
+          <!-- Right: Role Timeline -->
+          <div>
+            <h4 style="font-size: 1.1rem; font-family: var(--font-heading); margin-bottom: 1.25rem; color: var(--color-text-secondary);">Community Journey</h4>
+            
+            <!-- Current Role -->
+            <div style="margin-bottom: 1.25rem; padding: 1rem 1.25rem; background: rgba(71, 33, 209, 0.08); border-left: 4px solid var(--color-aws-orange); border-radius: 0 12px 12px 0;">
+              <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.3rem;">
+                <span style="font-weight: 700; font-size: 1rem; color: var(--color-aws-orange);">Community Leader & Organizer</span>
+                <span style="background: rgba(34, 197, 94, 0.15); color: #22c55e; font-size: 0.7rem; font-weight: 700; padding: 0.15rem 0.5rem; border-radius: 4px; text-transform: uppercase;">Current</span>
+              </div>
+              <p style="font-size: 0.8rem; color: var(--color-text-secondary); margin-bottom: 0.6rem;">May 2026 – Present</p>
+              <ul style="color: var(--color-text-secondary); font-size: 0.88rem; line-height: 1.7; padding-left: 1.2rem; margin: 0;">
+                <li>Spearheaded end-to-end planning and execution of 80+ technical events and workshops</li>
+                <li>Scaled the ecosystem to 3,000+ Meetup members and 2,000+ LinkedIn followers</li>
+                <li>Curates AWS Evangelists and industry experts for high-impact presentations</li>
+                <li>Partners with AWS and global vendors for sponsorships and operational support</li>
+                <li>Oversees community digital presence and multi-channel communications</li>
+              </ul>
+            </div>
+
+            <!-- Co Organizer -->
+            <div style="margin-bottom: 1.25rem; padding: 1rem 1.25rem; background: rgba(71, 33, 209, 0.04); border-left: 4px solid #a58aff; border-radius: 0 12px 12px 0;">
+              <p style="font-weight: 700; font-size: 1rem; margin-bottom: 0.3rem; color: #a58aff;">Co Organizer</p>
+              <p style="font-size: 0.8rem; color: var(--color-text-secondary); margin-bottom: 0.6rem;">Aug 2019 – Apr 2026 · 6 yrs 9 mos</p>
+              <ul style="color: var(--color-text-secondary); font-size: 0.88rem; line-height: 1.7; padding-left: 1.2rem; margin: 0;">
+                <li>Co-hosted and moderated 80+ technical meetups, workshops, and conferences</li>
+                <li>Managed speaker lineups and facilitated technical Q&A sessions</li>
+                <li>Drove audience engagement and networking for 3,000+ member community</li>
+                <li>Executed on-site logistics, venue coordination, and A/V setups</li>
+              </ul>
+            </div>
+
+            <!-- Volunteer -->
+            <div style="padding: 1rem 1.25rem; background: rgba(255, 255, 255, 0.02); border-left: 4px solid var(--color-text-secondary); border-radius: 0 12px 12px 0;">
+              <p style="font-weight: 700; font-size: 1rem; margin-bottom: 0.3rem; color: var(--color-text-secondary);">Volunteer</p>
+              <p style="font-size: 0.8rem; color: var(--color-text-secondary); margin-bottom: 0.6rem;">Nov 2018 – Aug 2019 · 10 mos</p>
+              <ul style="color: var(--color-text-secondary); font-size: 0.88rem; line-height: 1.7; padding-left: 1.2rem; margin: 0;">
+                <li>Assisted with venue setup, registration, and event operations</li>
+                <li>Facilitated networking among attendees and first-time guests</li>
+                <li>Supported event photography, social media promotions, and community growth</li>
+              </ul>
+            </div>
+          </div>
         </div>
+
+        <!-- Responsive override for mobile -->
+        <style>
+          @media (max-width: 768px) {
+            .container > div[style*="grid-template-columns: 280px"] {
+              grid-template-columns: 1fr !important;
+              padding: 1.5rem !important;
+              gap: 2rem !important;
+            }
+          }
+        </style>
 
         <!-- Volunteers Banner -->
         <div class="volunteers-banner">

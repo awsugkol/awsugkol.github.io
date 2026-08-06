@@ -58,3 +58,7 @@ Allow: /
 
 # Sitemap Location
 Sitemap: https://awsugkol.github.io/sitemap.xml
+
+# LLMs.txt - AI Agent Discovery
+# https://llmstxt.org/
+# Full context for AI systems: https://awsugkol.github.io/llms.txt
