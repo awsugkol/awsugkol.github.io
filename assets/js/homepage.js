@@ -292,4 +292,122 @@ document.addEventListener("DOMContentLoaded", () => {
       </div>
     `;
   }
+
+  // 3. Top 10 Volunteers Leaderboard (Auto-fetched from registry + Google Sheets)
+  const topVolGrid = document.getElementById("top-volunteers-grid");
+  if (topVolGrid) {
+    const SHEET_CSV_URL = "https://community.omniaigs.com/awsugkol/files/volunteer_points_leaderboard_2026.csv";
+    const REGISTRY_URL = "./volunteers/registry.json";
+
+    // CSV parser helper
+    function parseCSVLines(t) {
+      const lines = [];
+      let row = [''];
+      let inQuotes = false;
+      for (let i = 0; i < t.length; i++) {
+        const c = t[i];
+        const next = t[i + 1];
+        if (c === '"') {
+          if (inQuotes && next === '"') { row[row.length - 1] += '"'; i++; }
+          else { inQuotes = !inQuotes; }
+        } else if (c === ',' && !inQuotes) {
+          row.push('');
+        } else if ((c === '\r' || c === '\n') && !inQuotes) {
+          if (c === '\r' && next === '\n') i++;
+          lines.push(row);
+          row = [''];
+        } else {
+          row[row.length - 1] += c;
+        }
+      }
+      if (row.length > 1 || row[0] !== '') lines.push(row);
+      return lines;
+    }
+
+    Promise.all([
+      fetch(REGISTRY_URL).then(r => r.json()),
+      fetch(SHEET_CSV_URL).then(r => r.text())
+    ])
+      .then(([registry, csvText]) => {
+        // Build awsBuilder/role maps from registry
+        const awsBuilderMap = {};
+        const roleMap = {};
+        registry.forEach(v => {
+          const key = v.name.toLowerCase().trim().replace(/\s+/g, ' ');
+          if (v.awsBuilder) awsBuilderMap[key] = v.awsBuilder;
+          if (v.role) roleMap[key] = v.role;
+        });
+
+        // Parse CSV to extract points per volunteer
+        const sheetData = {};
+        let current = null;
+        const lines = parseCSVLines(csvText);
+
+        lines.forEach(r => {
+          const name = r[0] ? r[0].trim() : '';
+          const period = r[1] ? r[1].trim() : '';
+          if (name && name !== 'Volunteers Name' && name !== 'Points Leaderboard') {
+            const key = name.toLowerCase().trim().replace(/\s+/g, ' ');
+            sheetData[key] = { name, total: 0 };
+            current = sheetData[key];
+          } else if (!name && period && current) {
+            for (let col = 2; col < 14; col++) {
+              const val = r[col] ? parseInt(r[col].trim(), 10) || 0 : 0;
+              current.total += val;
+            }
+          }
+        });
+
+        // Merge registry names with sheet points
+        const merged = [];
+        const seen = new Set();
+
+        registry.forEach(v => {
+          const key = v.name.toLowerCase().trim().replace(/\s+/g, ' ');
+          const points = sheetData[key] ? sheetData[key].total : 0;
+          seen.add(key);
+          if (points > 0) {
+            merged.push({ name: v.name, role: v.role || "Active Volunteer", awsBuilder: v.awsBuilder || '', points });
+          }
+        });
+
+        // Add sheet-only volunteers not in registry
+        Object.keys(sheetData).forEach(key => {
+          if (!seen.has(key) && sheetData[key].total > 0) {
+            merged.push({ name: sheetData[key].name, role: roleMap[key] || "Active Volunteer", awsBuilder: awsBuilderMap[key] || '', points: sheetData[key].total });
+          }
+        });
+
+        // Sort by points descending, take top 10
+        merged.sort((a, b) => b.points - a.points);
+        const top10 = merged.slice(0, 10);
+
+        // Render cards
+        topVolGrid.innerHTML = '';
+        top10.forEach((vol, i) => {
+          const rank = i + 1;
+          const initials = vol.name.split(" ").map(n => n[0]).join("").substring(0, 2).toUpperCase();
+          const gradClass = `grad-${(i % 6) + 1}`;
+          const rankClass = rank <= 3 ? ` rank-${rank}` : '';
+
+          const card = document.createElement("div");
+          card.className = "top-vol-card";
+          card.innerHTML = `
+            <div class="top-vol-rank${rankClass}">${rank}</div>
+            <div class="top-vol-avatar ${gradClass}">${initials}</div>
+            <div class="top-vol-info">
+              <div class="top-vol-name">${vol.name}</div>
+              <div class="top-vol-role">${vol.role}</div>
+            </div>
+            <div class="top-vol-points">${vol.points}</div>
+            ${vol.awsBuilder ? `<a href="${vol.awsBuilder}" target="_blank" class="top-vol-aws-builder" aria-label="AWS Builder profile of ${vol.name}"><i class="fa-brands fa-aws"></i> Builder</a>` : ''}
+          `;
+          topVolGrid.appendChild(card);
+        });
+      })
+      .catch(err => {
+        console.error("Error loading top volunteers:", err);
+        topVolGrid.innerHTML = '<p style="text-align:center;color:var(--color-text-secondary);padding:2rem;">Unable to load volunteer data. Please try again later.</p>';
+      });
+  }
 });

@@ -45,6 +45,12 @@ document.addEventListener("DOMContentLoaded", () => {
         font-size: 0.82rem !important;
         white-space: nowrap !important;
       }
+      .nav-links a[href*="#join"].btn.btn-primary {
+        color: #ffffff !important;
+      }
+      .nav-links a[href*="#join"].btn.btn-primary:hover {
+        color: #ffffff !important;
+      }
       .logo span {
         white-space: nowrap !important;
       }
@@ -390,6 +396,258 @@ document.addEventListener("DOMContentLoaded", () => {
     body.light-theme .load-more-btn {
       border-color: #4721d1 !important;
       color: #4721d1 !important;
+    }
+
+    /* Enhanced Event Cards — Modern Redesign */
+    .events-grid {
+      display: grid !important;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)) !important;
+      gap: 1.5rem !important;
+    }
+
+    .event-card {
+      background: rgba(15, 10, 40, 0.6) !important;
+      border: 1px solid rgba(196, 181, 253, 0.1) !important;
+      border-radius: 16px !important;
+      overflow: hidden !important;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3) !important;
+      position: relative !important;
+    }
+
+    .event-card::before {
+      content: '' !important;
+      position: absolute !important;
+      inset: 0 !important;
+      border-radius: 16px !important;
+      padding: 1px !important;
+      background: linear-gradient(135deg, rgba(196, 181, 253, 0.15), transparent 50%) !important;
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0) !important;
+      mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0) !important;
+      -webkit-mask-composite: xor !important;
+      mask-composite: exclude !important;
+      pointer-events: none !important;
+      opacity: 0 !important;
+      transition: opacity 0.4s ease !important;
+    }
+
+    .event-card:hover {
+      transform: translateY(-6px) !important;
+      box-shadow: 0 20px 50px rgba(71, 33, 209, 0.25), 0 0 40px rgba(196, 181, 253, 0.08) !important;
+      border-color: rgba(196, 181, 253, 0.3) !important;
+    }
+
+    .event-card:hover::before {
+      opacity: 1 !important;
+    }
+
+    .event-card.highlight {
+      border-color: rgba(71, 33, 209, 0.5) !important;
+      box-shadow: 0 8px 30px rgba(71, 33, 209, 0.2), 0 0 0 1px rgba(71, 33, 209, 0.1) !important;
+    }
+
+    .event-card.highlight:hover {
+      box-shadow: 0 20px 50px rgba(71, 33, 209, 0.35), 0 0 60px rgba(196, 181, 253, 0.1) !important;
+    }
+
+    .event-thumbnail-container {
+      position: relative !important;
+      width: 100% !important;
+      height: 180px !important;
+      overflow: hidden !important;
+      background: linear-gradient(135deg, #140f32, #1b1343) !important;
+    }
+
+    .event-thumbnail-container::after {
+      content: '' !important;
+      position: absolute !important;
+      inset: 0 !important;
+      background: linear-gradient(to top, rgba(15, 10, 40, 0.7) 0%, transparent 50%) !important;
+      pointer-events: none !important;
+      z-index: 1 !important;
+    }
+
+    .event-thumbnail {
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: cover !important;
+      transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), filter 0.4s ease !important;
+    }
+
+    .event-card:hover .event-thumbnail {
+      transform: scale(1.08) !important;
+      filter: brightness(1.1) !important;
+    }
+
+    .event-thumbnail-container .event-date {
+      position: absolute !important;
+      top: 0.85rem !important;
+      left: 0.85rem !important;
+      z-index: 3 !important;
+      border-radius: 10px !important;
+      padding: 0.5rem 0.75rem !important;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4) !important;
+      backdrop-filter: blur(8px) !important;
+      -webkit-backdrop-filter: blur(8px) !important;
+      background: linear-gradient(135deg, #4721d1, #6d28d9) !important;
+      border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    }
+
+    .event-thumbnail-container .event-date.past {
+      background: rgba(30, 25, 55, 0.9) !important;
+      border-color: rgba(255, 255, 255, 0.08) !important;
+      color: #a0aab2 !important;
+    }
+
+    .event-date .month {
+      font-size: 0.7rem !important;
+      font-weight: 800 !important;
+      text-transform: uppercase !important;
+      letter-spacing: 0.08em !important;
+      color: rgba(255, 255, 255, 0.9) !important;
+    }
+
+    .event-date .day {
+      font-size: 1.4rem !important;
+      font-weight: 800 !important;
+      line-height: 1.1 !important;
+      margin: 0.1rem 0 !important;
+      color: #ffffff !important;
+    }
+
+    .event-date .year {
+      font-size: 0.65rem !important;
+      font-weight: 600 !important;
+      color: rgba(255, 255, 255, 0.7) !important;
+    }
+
+    .event-date.past .month,
+    .event-date.past .day,
+    .event-date.past .year {
+      color: #a0aab2 !important;
+    }
+
+    .event-info {
+      padding: 1.35rem 1.25rem 1.25rem !important;
+      flex-grow: 1 !important;
+      display: flex !important;
+      flex-direction: column !important;
+    }
+
+    .event-info h3 {
+      font-size: 1.1rem !important;
+      font-weight: 700 !important;
+      line-height: 1.35 !important;
+      margin-bottom: 0.7rem !important;
+      color: #ffffff !important;
+      display: -webkit-box !important;
+      -webkit-line-clamp: 2 !important;
+      -webkit-box-orient: vertical !important;
+      overflow: hidden !important;
+    }
+
+    .event-host {
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 0.45rem !important;
+      font-size: 0.78rem !important;
+      color: var(--color-text-secondary) !important;
+      background: rgba(196, 181, 253, 0.06) !important;
+      border: 1px solid rgba(196, 181, 253, 0.12) !important;
+      padding: 0.3rem 0.7rem !important;
+      border-radius: 20px !important;
+      font-weight: 500 !important;
+      margin-bottom: 1rem !important;
+      align-self: flex-start !important;
+    }
+
+    .event-host i {
+      color: #c4b5fd !important;
+      font-size: 0.72rem !important;
+    }
+
+    .event-info .btn {
+      align-self: flex-start !important;
+      margin-top: auto !important;
+      padding: 0.55rem 1.25rem !important;
+      font-size: 0.82rem !important;
+      font-weight: 700 !important;
+      border-radius: 10px !important;
+      background: linear-gradient(135deg, #4721d1, #3f20c5) !important;
+      color: #ffffff !important;
+      box-shadow: 0 4px 15px rgba(71, 33, 209, 0.3) !important;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+      text-decoration: none !important;
+    }
+
+    .event-info .btn:hover {
+      transform: translateY(-2px) !important;
+      box-shadow: 0 8px 25px rgba(71, 33, 209, 0.5) !important;
+    }
+
+    /* Light Theme Event Card Overrides */
+    body.light-theme .event-card {
+      background: #ffffff !important;
+      border-color: rgba(0, 0, 0, 0.06) !important;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06) !important;
+    }
+
+    body.light-theme .event-card:hover {
+      box-shadow: 0 16px 40px rgba(71, 33, 209, 0.12) !important;
+      border-color: rgba(71, 33, 209, 0.2) !important;
+    }
+
+    body.light-theme .event-card.highlight {
+      border-color: rgba(71, 33, 209, 0.3) !important;
+      box-shadow: 0 4px 20px rgba(71, 33, 209, 0.08) !important;
+    }
+
+    body.light-theme .event-thumbnail-container {
+      background: #f1f5f9 !important;
+    }
+
+    body.light-theme .event-thumbnail-container::after {
+      background: linear-gradient(to top, rgba(255, 255, 255, 0.4) 0%, transparent 50%) !important;
+    }
+
+    body.light-theme .event-info h3 {
+      color: #0f172a !important;
+    }
+
+    body.light-theme .event-host {
+      background: rgba(71, 33, 209, 0.04) !important;
+      border-color: rgba(71, 33, 209, 0.1) !important;
+    }
+
+    body.light-theme .event-host i {
+      color: #4721d1 !important;
+    }
+
+    body.light-theme .event-date.past {
+      background: #f1f5f9 !important;
+      border-color: rgba(0, 0, 0, 0.08) !important;
+    }
+
+    body.light-theme .event-date.past .month,
+    body.light-theme .event-date.past .day,
+    body.light-theme .event-date.past .year {
+      color: #64748b !important;
+    }
+
+    @media (max-width: 768px) {
+      .events-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.25rem !important;
+      }
+      .event-thumbnail-container {
+        height: 160px !important;
+      }
+      .event-info {
+        padding: 1.15rem 1rem 1rem !important;
+      }
+      .event-info h3 {
+        font-size: 1rem !important;
+      }
     }
 
     /* Floating Scroll to Top Button (Global Fixed Overlay) */

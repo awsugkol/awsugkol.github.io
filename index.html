@@ -403,6 +403,333 @@
       border-color: rgba(71, 33, 209, 0.2);
       color: #4721d1;
     }
+
+    /* 10th Anniversary Badge */
+    .anniversary-badge {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, rgba(71, 33, 209, 0.3) 0%, rgba(196, 181, 253, 0.15) 100%);
+      border: 2px solid rgba(196, 181, 253, 0.5);
+      box-shadow: 0 0 50px rgba(71, 33, 209, 0.4), 0 0 100px rgba(196, 181, 253, 0.15);
+      margin-bottom: 1.75rem;
+      animation: anniversary-glow 3s ease-in-out infinite alternate;
+    }
+
+    @keyframes anniversary-glow {
+      0% { box-shadow: 0 0 40px rgba(71, 33, 209, 0.3), 0 0 80px rgba(196, 181, 253, 0.1); }
+      100% { box-shadow: 0 0 60px rgba(71, 33, 209, 0.5), 0 0 120px rgba(196, 181, 253, 0.25); }
+    }
+
+    .anniversary-number {
+      font-family: var(--font-heading);
+      font-size: 3.5rem;
+      font-weight: 800;
+      line-height: 1;
+      color: #ffffff;
+      background: linear-gradient(135deg, #ffffff 0%, #c4b5fd 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .anniversary-label {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #c4b5fd;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      margin-top: 0.1rem;
+    }
+
+    /* Anniversary Stats Row */
+    .anniversary-stats {
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-top: 1.5rem;
+      padding: 1.25rem 2rem;
+      background: rgba(20, 15, 50, 0.45);
+      border: 1px solid rgba(196, 181, 253, 0.15);
+      border-radius: 16px;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    .anniversary-stat {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.25rem;
+    }
+
+    .anniversary-stat-number {
+      font-family: var(--font-heading);
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: #ffffff;
+    }
+
+    .anniversary-stat-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--color-text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* Light Theme Anniversary Overrides */
+    body.light-theme .anniversary-badge {
+      background: linear-gradient(135deg, rgba(71, 33, 209, 0.12) 0%, rgba(196, 181, 253, 0.08) 100%);
+      border-color: rgba(71, 33, 209, 0.35);
+      box-shadow: 0 0 40px rgba(71, 33, 209, 0.15), 0 0 80px rgba(196, 181, 253, 0.08);
+    }
+
+    body.light-theme .anniversary-number {
+      background: linear-gradient(135deg, #4721d1 0%, #6d28d9 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    body.light-theme .anniversary-label {
+      color: #4721d1;
+    }
+
+    body.light-theme .anniversary-stats {
+      background: rgba(255, 255, 255, 0.8);
+      border-color: rgba(71, 33, 209, 0.12);
+      backdrop-filter: none;
+    }
+
+    body.light-theme .anniversary-stat-number {
+      color: #0f172a;
+    }
+
+    body.light-theme .anniversary-stat-label {
+      color: #64748b;
+    }
+
+    /* Mobile Anniversary Adjustments */
+    @media (max-width: 768px) {
+      .anniversary-badge {
+        width: 110px;
+        height: 110px;
+        margin-bottom: 1.25rem;
+      }
+      .anniversary-number {
+        font-size: 2.75rem;
+      }
+      .anniversary-label {
+        font-size: 0.82rem;
+      }
+      .anniversary-stats {
+        gap: 1.25rem;
+        padding: 1rem 1.25rem;
+      }
+      .anniversary-stat-number {
+        font-size: 1.3rem;
+      }
+      .anniversary-stat-label {
+        font-size: 0.68rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .anniversary-badge {
+        width: 95px;
+        height: 95px;
+        margin-bottom: 1rem;
+      }
+      .anniversary-number {
+        font-size: 2.25rem;
+      }
+      .anniversary-label {
+        font-size: 0.75rem;
+      }
+      .anniversary-stats {
+        gap: 1rem;
+        padding: 0.85rem 1rem;
+      }
+    }
+
+    /* Top Volunteers Section */
+    .top-volunteers {
+      padding: 4rem 1.5rem;
+    }
+
+    .top-volunteers-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      max-width: 800px;
+      margin: 2rem auto 0;
+    }
+
+    .top-volunteers-loading {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 2rem;
+      color: var(--color-text-secondary);
+      font-size: 0.95rem;
+    }
+
+    .top-vol-card {
+      position: relative;
+      background: rgba(20, 15, 50, 0.5);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 14px;
+      padding: 1.25rem 1.25rem 1rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    .top-vol-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(196, 181, 253, 0.35);
+      box-shadow: 0 10px 30px rgba(71, 33, 209, 0.2);
+    }
+
+    .top-vol-rank {
+      position: absolute;
+      top: -8px;
+      left: -8px;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #4721d1, #6d28d9);
+      color: #ffffff;
+      font-size: 0.75rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(71, 33, 209, 0.4);
+      border: 2px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .top-vol-rank.rank-1 { background: linear-gradient(135deg, #f59e0b, #d97706); box-shadow: 0 4px 12px rgba(245, 158, 11, 0.4); }
+    .top-vol-rank.rank-2 { background: linear-gradient(135deg, #94a3b8, #64748b); box-shadow: 0 4px 12px rgba(148, 163, 184, 0.4); }
+    .top-vol-rank.rank-3 { background: linear-gradient(135deg, #cd7c2f, #a16207); box-shadow: 0 4px 12px rgba(205, 124, 47, 0.4); }
+
+    .top-vol-avatar {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #ffffff;
+      flex-shrink: 0;
+    }
+
+    .top-vol-avatar.grad-1 { background: linear-gradient(135deg, #4721d1, #6d28d9); }
+    .top-vol-avatar.grad-2 { background: linear-gradient(135deg, #0ea5e9, #0284c7); }
+    .top-vol-avatar.grad-3 { background: linear-gradient(135deg, #10b981, #059669); }
+    .top-vol-avatar.grad-4 { background: linear-gradient(135deg, #f59e0b, #d97706); }
+    .top-vol-avatar.grad-5 { background: linear-gradient(135deg, #ef4444, #dc2626); }
+    .top-vol-avatar.grad-6 { background: linear-gradient(135deg, #8b5cf6, #7c3aed); }
+
+    .top-vol-info {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .top-vol-name {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 0.2rem;
+      word-break: break-word;
+    }
+
+    .top-vol-role {
+      font-size: 0.75rem;
+      color: var(--color-text-secondary);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .top-vol-points {
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: #c4b5fd;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .top-vol-aws-builder {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.35rem;
+      padding: 0.35rem 0.75rem;
+      border-radius: 8px;
+      background: rgba(255, 153, 0, 0.12);
+      border: 1px solid rgba(255, 153, 0, 0.35);
+      color: #ff9900;
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-decoration: none;
+      flex-shrink: 0;
+      transition: all 0.2s ease;
+    }
+
+    .top-vol-aws-builder:hover {
+      background: rgba(255, 153, 0, 0.2);
+      transform: scale(1.05);
+    }
+
+    /* Light Theme Top Volunteers */
+    body.light-theme .top-vol-card {
+      background: #ffffff;
+      border-color: rgba(0, 0, 0, 0.08);
+      backdrop-filter: none;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+    }
+
+    body.light-theme .top-vol-card:hover {
+      border-color: rgba(71, 33, 209, 0.25);
+      box-shadow: 0 10px 25px rgba(71, 33, 209, 0.1);
+    }
+
+    body.light-theme .top-vol-name {
+      color: #0f172a;
+    }
+
+    body.light-theme .top-vol-role {
+      color: #64748b;
+    }
+
+    body.light-theme .top-vol-points {
+      color: #4721d1;
+    }
+
+    /* Mobile Top Volunteers */
+    @media (max-width: 768px) {
+      .top-volunteers {
+        padding: 3rem 1rem;
+      }
+      .top-volunteers-grid {
+        gap: 0.65rem;
+        margin-top: 1.5rem;
+      }
+    }
   </style>
 </head>
 
@@ -419,28 +746,53 @@
   <nav id="navbar" class="navbar"></nav>
 
   <main>
-    <!-- Innovative Hero Section -->
+    <!-- Innovative Hero Section — 10th Anniversary -->
     <section id="hero" class="innovative-hero">
       <div class="hero-grid-overlay"></div>
-      <div class="hero-content" style="position: relative; z-index: 2;">
-        
+      <div class="hero-content" style="position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; text-align: center;">
+
         <div class="hero-badge-pill animate-up">
           <span class="pulse-dot"></span>
-          Official AWS User Group Kolkata &bull; 3,000+ Members
+          Official AWS User Group Kolkata &bull; Est. 2016
         </div>
 
-        <div class="animate-up" style="display:inline-flex;align-items:center;gap:0.5rem;background:linear-gradient(135deg,rgba(255,153,0,0.15),rgba(255,85,0,0.1));border:1px solid rgba(255,153,0,0.4);padding:0.4rem 1rem;border-radius:50px;font-size:0.85rem;font-weight:600;color:#ff9900;margin-bottom:1rem;">🎂 Celebrating 10 Years &middot; Est. 2016</div>
-        <h1 class="animate-up delay-1">Architecting the Future of <span class="gradient-text">Cloud & AI</span> in Kolkata</h1>
-        
-        <p class="animate-up delay-2">Connect with 3,000+ cloud developers, software architects, and tech leaders. Explore hands-on workshops, technical deep-dives, and annual AWS Community Days.</p>
-        
+        <!-- Big 10th Anniversary Centerpiece -->
+        <div class="anniversary-badge animate-up">
+          <span class="anniversary-number">10</span>
+          <span class="anniversary-label">Years</span>
+        </div>
+
+        <h1 class="animate-up delay-1">A Decade of <span class="gradient-text">Cloud & Community</span> in Kolkata</h1>
+
+        <p class="animate-up delay-2">Celebrating 10 years of building, learning, and growing together. 3,000+ members, 80+ events, and countless connections since 5th August 2016.</p>
+
         <div class="hero-cta-group animate-up delay-3">
           <a href="https://go.omniaigs.com/r/46xdcF" target="_blank" class="hero-btn-primary">
-            <i class="fa-brands fa-meetup" style="font-size: 1.2rem;"></i> Join Us on Meetup
+            <i class="fa-brands fa-meetup" style="font-size: 1.2rem;"></i> Join the Community
           </a>
           <a href="./events/" class="hero-btn-secondary">
-            <i class="fa-solid fa-calendar-days" style="font-size: 1.1rem; color: #c4b5fd;"></i> Explore All Events
+            <i class="fa-solid fa-calendar-days" style="font-size: 1.1rem; color: #c4b5fd;"></i> See All Events
           </a>
+        </div>
+
+        <!-- Anniversary Stats Row -->
+        <div class="anniversary-stats animate-up delay-3">
+          <div class="anniversary-stat">
+            <span class="anniversary-stat-number">10</span>
+            <span class="anniversary-stat-label">Years Strong</span>
+          </div>
+          <div class="anniversary-stat">
+            <span class="anniversary-stat-number">3,000+</span>
+            <span class="anniversary-stat-label">Community Members</span>
+          </div>
+          <div class="anniversary-stat">
+            <span class="anniversary-stat-number">80+</span>
+            <span class="anniversary-stat-label">Events Hosted</span>
+          </div>
+          <div class="anniversary-stat">
+            <span class="anniversary-stat-number">50+</span>
+            <span class="anniversary-stat-label">Speakers Featured</span>
+          </div>
         </div>
       </div>
 
@@ -472,8 +824,8 @@
         <div class="hero-feature-card">
           <div class="hero-feature-icon"><i class="fa-solid fa-award"></i></div>
           <div class="hero-feature-text">
-            <h4>Volunteer Rewards</h4>
-            <p>Leaderboard & badges</p>
+            <h4>Community Day</h4>
+            <p>Annual flagship event</p>
           </div>
         </div>
       </div>
@@ -509,6 +861,23 @@
         <div id="events-pagination" class="pagination"></div>
         <div style="text-align: center; margin-top: 2.5rem;">
           <a href="./events/" class="btn btn-secondary btn-large">Explore All 80+ Events <i class="fa-solid fa-arrow-right" style="margin-left: 0.5rem;"></i></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Top Volunteers Section -->
+    <section id="top-volunteers" class="top-volunteers section">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2>Top Volunteers</h2>
+          <div class="hr-line"></div>
+          <p style="font-size: 0.92rem; color: var(--color-text-secondary); margin-top: 0.5rem;">Our most active contributors, ranked by participation points.</p>
+        </div>
+        <div id="top-volunteers-grid" class="top-volunteers-grid">
+          <div class="top-volunteers-loading">Loading top volunteers...</div>
+        </div>
+        <div style="text-align: center; margin-top: 2rem;">
+          <a href="./volunteers/" class="btn btn-secondary">View Full Leaderboard <i class="fa-solid fa-arrow-right" style="margin-left: 0.5rem;"></i></a>
         </div>
       </div>
     </section>

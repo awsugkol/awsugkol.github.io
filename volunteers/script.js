@@ -216,41 +216,37 @@ document.addEventListener("DOMContentLoaded", () => {
           linkedinBtn.style.display = "";
         }
 
-        // 4. Point Tier Badges (Dynamic points evaluation)
-        if (points >= 100) {
-          const b100 = document.createElement("span");
-          b100.className = "vol-badge badge-100";
-          b100.textContent = "100+";
-          b100.title = "Milestone: 100+ Contribution Points";
-          badgesContainer.appendChild(b100);
-        }
-        if (points >= 200) {
-          const b200 = document.createElement("span");
-          b200.className = "vol-badge badge-200";
-          b200.textContent = "200+";
-          b200.title = "Milestone: 200+ Contribution Points";
-          badgesContainer.appendChild(b200);
-        }
-        if (points >= 300) {
-          const b300 = document.createElement("span");
-          b300.className = "vol-badge badge-300";
-          b300.textContent = "300+";
-          b300.title = "Milestone: 300+ Contribution Points";
-          badgesContainer.appendChild(b300);
-        }
-        if (points >= 400) {
-          const b400 = document.createElement("span");
-          b400.className = "vol-badge badge-400";
-          b400.textContent = "400+";
-          b400.title = "Milestone: 400+ Contribution Points";
-          badgesContainer.appendChild(b400);
-        }
+        // 4. Point Tier Badge (Only show highest milestone)
         if (points >= 500) {
-          const b500 = document.createElement("span");
-          b500.className = "vol-badge badge-500";
-          b500.textContent = "500+";
-          b500.title = "Milestone: 500+ Contribution Points";
-          badgesContainer.appendChild(b500);
+          const b = document.createElement("span");
+          b.className = "vol-badge badge-500";
+          b.textContent = "500+";
+          b.title = "Milestone: 500+ Contribution Points";
+          badgesContainer.appendChild(b);
+        } else if (points >= 400) {
+          const b = document.createElement("span");
+          b.className = "vol-badge badge-400";
+          b.textContent = "400+";
+          b.title = "Milestone: 400+ Contribution Points";
+          badgesContainer.appendChild(b);
+        } else if (points >= 300) {
+          const b = document.createElement("span");
+          b.className = "vol-badge badge-300";
+          b.textContent = "300+";
+          b.title = "Milestone: 300+ Contribution Points";
+          badgesContainer.appendChild(b);
+        } else if (points >= 200) {
+          const b = document.createElement("span");
+          b.className = "vol-badge badge-200";
+          b.textContent = "200+";
+          b.title = "Milestone: 200+ Contribution Points";
+          badgesContainer.appendChild(b);
+        } else if (points >= 100) {
+          const b = document.createElement("span");
+          b.className = "vol-badge badge-100";
+          b.textContent = "100+";
+          b.title = "Milestone: 100+ Contribution Points";
+          badgesContainer.appendChild(b);
         }
       }
 
