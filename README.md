@@ -18,7 +18,6 @@ The official website for **AWS User Group Kolkata (AWSUGKOL)** — an independen
 - **Dark & Light Themes** — Full theme toggle with persistent preference
 - **10th Anniversary Celebration** — Interactive modal with confetti animation
 - **Responsive Design** — Mobile-first with adaptive layouts across all pages
-- **AI-Friendly** — `llms.txt`, structured data (JSON-LD), and comprehensive meta tags
 
 ## 🛠️ Tech Stack
 
@@ -31,54 +30,6 @@ The official website for **AWS User Group Kolkata (AWSUGKOL)** — an independen
 | Data | Google Sheets CSV (volunteer points), embedded JSON (events) |
 | Security | Client-side AES encryption for volunteer vault |
 
-**No build step required.** Edit files directly and push to deploy.
-
-## 📁 Project Structure
-
-```
-├── index.html              # Homepage
-├── about/                  # About the community
-├── events/                 # Full events archive
-├── organizers/             # Leadership profiles
-├── volunteers/             # Leaderboard & encrypted vault
-├── resources/              # Community resources & downloads
-├── assets/
-│   ├── css/                # Bundled stylesheet
-│   ├── js/                 # Homepage, layout, and event logic
-│   └── images/             # Logos, badges, icons
-├── components/             # Shared header & footer (fetched dynamically)
-├── robots.txt              # Search engine & AI crawler directives
-├── sitemap.xml             # XML sitemap for indexing
-├── llms.txt                # AI agent discovery (llmstxt.org standard)
-└── aigentemp/              # Admin utilities (gitignored, not deployed)
-```
-
-## 🚀 Development
-
-No dependencies to install. Open any HTML file in a browser to preview:
-
-```bash
-# Clone and open
-git clone https://github.com/awsugkol/awsugkol.github.io.git
-cd awsugkol.github.io
-start index.html
-```
-
-### Deployment
-
-Push to `main` branch — GitHub Pages deploys automatically via Actions.
-
-```bash
-git add .
-git commit -m "Update content"
-git push origin main
-```
-
-## 📊 SEO & Indexing
-
-- **Google/Bing** — XML sitemap, canonical URLs, Open Graph, Twitter Cards, JSON-LD structured data
-- **AI Crawlers** — Explicitly allowed in `robots.txt` (GPTBot, ClaudeBot, PerplexityBot, Google-Extended, Amazonbot)
-- **LLMs** — `llms.txt` provides a concise site summary for AI agents
 
 ## 🤝 Community
 
