@@ -296,7 +296,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // 3. Top 10 Volunteers Leaderboard (Auto-fetched from registry + Google Sheets)
   const topVolGrid = document.getElementById("top-volunteers-grid");
   if (topVolGrid) {
-    const SHEET_CSV_URL = "https://community.omniaigs.com/awsugkol/files/volunteer_points_leaderboard_2026.csv";
+    const SHEET_CSV_URL = "./assets/files/volunteer_points_leaderboard_2026.csv";
     const REGISTRY_URL = "./volunteers/registry.json";
 
     // CSV parser helper
