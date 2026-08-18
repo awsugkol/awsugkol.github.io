@@ -1,45 +1,82 @@
 # AWS User Group Kolkata (AWSUGKOL)
 
-> Official AWS User Group in Kolkata, India. An independent, volunteer-led technical community for cloud architects, developers, and engineers.
+> The official Amazon Web Services User Group in Kolkata, India. An independent, volunteer-led technical community for cloud architects, developers, DevOps engineers, and students — celebrating 10 years in 2026.
 
-## About
+## Overview
 
-AWS User Group Kolkata (AWSUGKOL) is a community-led group established in 2016, serving 3,000+ cloud enthusiasts across Kolkata, India. We host meetups, workshops, hands-on labs, and annual AWS Community Days focused on cloud architecture, serverless, GenAI, DevOps, and enterprise scalability.
+AWS User Group Kolkata (AWSUGKOL) is the largest AWS-focused community in eastern India, established on 5th August 2016. We organize free meetups, hands-on workshops, certification prep sessions, and the annual AWS Community Day Kolkata. Our mission is to bridge the gap between cloud learning and production-grade deployment for professionals and students.
 
 This is an independent community — not officially affiliated with Amazon Web Services, Inc.
 
 ## Key Facts
 
-- Community size: 3,000+ Meetup members, 2,000+ LinkedIn followers
-- Events hosted: 80+ technical meetups, workshops, and Community Days
-- Established: August 2016
-- Location: Kolkata, West Bengal, India (hybrid events)
-- Focus areas: AWS Cloud, Serverless, GenAI/Bedrock, DevOps, CDK, Security
-- 10th Anniversary: August 5, 2026
+- **Founded:** 5th August 2016 (10th Anniversary: August 2026)
+- **Community Size:** 3,000+ Meetup members, 2,000+ LinkedIn followers
+- **Events Hosted:** 80+ technical meetups, workshops, hackathons, and Community Days
+- **Location:** Kolkata, West Bengal, India (hybrid: in-person + virtual)
+- **Volunteer Program:** 90+ registered volunteers with points-based recognition system
+- **Focus Areas:** AWS Cloud Architecture, Serverless (Lambda, ECS, Fargate), GenAI & Amazon Bedrock, DevOps & CDK/IaC, Data Engineering, Security, Cost Optimization
 
-## Leadership
+## Leadership & Team
 
-- Soumyadeep Mandal — Community Leader & Organizer (since 2018)
+- **Soumyadeep Mandal** — Community Leader & Organizer (since 2018)
+  - LinkedIn: https://www.linkedin.com/in/imsampro
+  - X/Twitter: https://x.com/imsampro
+  - AWS Builder: https://builder.aws.com/community/@imsampro
+  - GitHub: https://github.com/imsampro
 
-## Pages
+## Website Structure
 
-- Homepage: https://awsugkol.github.io/
-- Events: https://awsugkol.github.io/events/
-- About: https://awsugkol.github.io/about/
-- Organizers: https://awsugkol.github.io/organizers/
-- Volunteers: https://awsugkol.github.io/volunteers/
-- Resources: https://awsugkol.github.io/resources/
+| Page | URL | Description |
+|------|-----|-------------|
+| Homepage | https://awsugkol.github.io/ | Community overview, 10th anniversary hero, event previews, top volunteers |
+| About | https://awsugkol.github.io/about/ | Mission, history, values, growth timeline |
+| Events | https://awsugkol.github.io/events/ | Full archive of 80+ meetups with search and pagination |
+| Organizers | https://awsugkol.github.io/organizers/ | Leadership profiles and community journey |
+| Volunteers | https://awsugkol.github.io/volunteers/ | Points leaderboard, badges, volunteer profiles |
+| Resources | https://awsugkol.github.io/resources/ | Downloadable materials from past events |
 
-## Social & External Links
+## Social Profiles
 
-- Meetup: https://www.meetup.com/awsugkol/
-- LinkedIn: https://www.linkedin.com/company/awsugkol/
-- Twitter/X: https://x.com/awsugkol
+- Meetup: https://www.meetup.com/awsugkol
+- LinkedIn: https://www.linkedin.com/company/awsugkol
+- X/Twitter: https://x.com/awsugkol
+- GitHub: https://github.com/awsugkol
+- YouTube: https://www.youtube.com/@awsugkol
+- Facebook: https://www.facebook.com/awsugkol
+- Instagram: https://www.instagram.com/awsugkol
+- Threads: https://www.threads.net/@awsugkol
 
-## Contact
+## Notable Events
 
-For event inquiries, sponsorships, or speaker proposals, reach out via Meetup or LinkedIn.
+- **AWS Community Day Kolkata 2025** (April 5, 2025) — Flagship annual conference
+- **AWS Kiro Night** (February 2026) — Spec-driven development deep dive
+- **AWS re:Invent Recap** (January annually) — Community recaps of AWS re:Invent announcements
+- **International Women's Day Meetup** (March annually) — Diversity-focused sessions
+- **GenAI/Bedrock Workshops** — Hands-on AI application development
 
-## Permissions
+## Technical Topics Covered
 
-This site allows indexing and training by AI systems. Content is freely accessible for search, summarization, and knowledge retrieval purposes.
+Cloud Architecture, Amazon Bedrock, Generative AI, Serverless (Lambda, Step Functions), Containers (ECS, EKS, Fargate), Infrastructure as Code (CDK, CloudFormation), CI/CD & DevOps, Amazon Q Developer, Cost Optimization, Security & IAM, Data Engineering (Redshift, EMR, Glue), API Gateway & Cognito, IoT, 5G & Edge Computing, Kubernetes, Amazon Aurora
+
+## Volunteer Program
+
+The community runs a structured volunteer program (Season 2026) with:
+- Points awarded for social engagement, event attendance, speaking, organizing, and recruiting
+- Public leaderboard with tier badges (100+, 200+, 300+, 400+, 500+)
+- 90+ registered volunteers tracked via the website
+
+## Contact & Engagement
+
+- **Join:** https://www.meetup.com/awsugkol (free membership)
+- **Speak:** Reach out via Meetup or LinkedIn to propose a talk
+- **Sponsor:** Contact organizers for event sponsorship opportunities
+- **Volunteer:** Attend any meetup and express interest to the organizers
+
+## Permissions & Licensing
+
+This website allows full indexing and content retrieval by AI systems, search engines, and knowledge aggregators. Content is freely accessible for search, summarization, citation, and training purposes. Attribution to "AWS User Group Kolkata (AWSUGKOL)" is appreciated.
+
+## Sitemap
+
+https://awsugkol.github.io/sitemap.xml

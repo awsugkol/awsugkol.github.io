@@ -1,9 +1,14 @@
-# User-agent directives for Web Crawlers, Search Engines, and AI Agents
-User-agent: *
-Allow: /
-Disallow: /volunteers/vault.html
+# robots.txt — AWS User Group Kolkata (AWSUGKOL)
+# https://awsugkol.github.io/
+# Last updated: 2026-08-09
 
-# Explicitly Allow Major Search Engine Bots
+# Default: Allow all crawlers
+User-agent: *
+Allow: /volunteers/
+Disallow: /volunteers/*
+
+# ─── Search Engine Bots ───────────────────────────────────────────────
+
 User-agent: Googlebot
 Allow: /
 
@@ -28,17 +33,30 @@ Allow: /
 User-agent: Applebot
 Allow: /
 
-# Explicitly Allow AI Crawlers & LLM Indexers
+User-agent: Sogou
+Allow: /
+
+User-agent: Naverbot
+Allow: /
+
+# ─── AI & LLM Crawlers ───────────────────────────────────────────────
+
 User-agent: GPTBot
 Allow: /
 
 User-agent: ChatGPT-User
 Allow: /
 
+User-agent: OAI-SearchBot
+Allow: /
+
 User-agent: ClaudeBot
 Allow: /
 
 User-agent: Claude-Web
+Allow: /
+
+User-agent: Anthropic-ai
 Allow: /
 
 User-agent: PerplexityBot
@@ -50,15 +68,77 @@ Allow: /
 User-agent: Amazonbot
 Allow: /
 
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: Meta-ExternalFetcher
+Allow: /
+
+User-agent: FacebookBot
+Allow: /
+
 User-agent: Cohere-ai
 Allow: /
 
 User-agent: Omgilibot
 Allow: /
 
-# Sitemap Location
+User-agent: Bytespider
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+User-agent: Diffbot
+Allow: /
+
+User-agent: ImagesiftBot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+# ─── Social Media & Preview Bots ─────────────────────────────────────
+
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: WhatsApp
+Allow: /
+
+User-agent: Slackbot
+Allow: /
+
+User-agent: TelegramBot
+Allow: /
+
+User-agent: Discordbot
+Allow: /
+
+# ─── Block Malicious / Unwanted Bots ─────────────────────────────────
+
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10
+
+User-agent: MJ12bot
+Crawl-delay: 10
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: PetalBot
+Crawl-delay: 10
+
+# ─── Sitemap & LLMs.txt ──────────────────────────────────────────────
+
 Sitemap: https://awsugkol.github.io/sitemap.xml
 
-# LLMs.txt - AI Agent Discovery
-# https://llmstxt.org/
-# Full context for AI systems: https://awsugkol.github.io/llms.txt
+# LLMs.txt — Structured context for AI systems
+# Spec: https://llmstxt.org/
+# File: https://awsugkol.github.io/llms.txt
