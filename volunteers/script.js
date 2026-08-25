@@ -154,7 +154,8 @@ document.addEventListener("DOMContentLoaded", () => {
         "trisha paul": "TP8926",
         "abhranil dutta": "AD9026",
         "alok malakar": "AM9126",
-        "minerva mandal": "MM9226"
+        "minerva mandal": "MM9226",
+        "anjanika paul": "AP9326"
       };
 
       function getVolunteerCode(name, index) {

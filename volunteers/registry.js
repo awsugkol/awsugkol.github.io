@@ -538,5 +538,11 @@ window.VOLUNTEERS_REGISTRY = [
     "name": "Minerva Mandal",
     "role": "Active Volunteer",
     "code": "MM9226"
+  },
+  {
+    "name": "Anjanika Paul",
+    "role": "Active Volunteer",
+    "linkedin": "https://www.linkedin.com/in/anjanika-paul-6037a2321",
+    "code": "AP9326"
   }
 ];
